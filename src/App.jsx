@@ -1,7 +1,8 @@
-import React from 'react';
-import { Search, Grid, Twitter, Facebook, Globe, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { Search, Grid, Twitter, Facebook, Globe, Star, Menu, X } from 'lucide-react';
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const frontendSkills = [
     { name: 'HTML', icon: '🌐' },
     { name: 'CSS', icon: '🎨' },
@@ -117,13 +118,17 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#fef5f3]">
+    <div className="min-h-screen bg-[#fef5f3]" style={{ scrollBehavior: 'smooth' }}>
+      {/* Hamburger Menu Button */}
+      <button 
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        className="fixed top-4 left-4 z-20 p-2 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <Menu className="w-5 h-5 text-gray-600" />
+      </button>
+
       {/* Header */}
-      <header className="flex items-center justify-between px-8 py-4 bg-[#fef5f3]">
-        <div className="flex items-center gap-2">
-          <Search className="w-4 h-4 text-gray-400" />
-          <span className="text-sm text-gray-400">Quick Search...</span>
-        </div>
+      <header className={`${sidebarOpen ? 'lg:ml-64' : ''} flex items-center justify-between px-8 py-4 bg-[#fef5f3] transition-all duration-300 pl-16`}>
         
         {/* <div className="flex items-center gap-2">
           <div className="text-2xl font-bold">
@@ -138,7 +143,7 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="px-4 sm:px-8 py-8 sm:py-12">
+      <section className={`${sidebarOpen ? 'lg:ml-64' : ''} px-4 sm:px-8 py-8 sm:py-12 transition-all duration-300`}>
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             {/* Left Content */}
@@ -179,8 +184,8 @@ function App() {
       </section>
 
       {/* Experience */}
-      <section className="px-8 py-8">
-        <div className="max-w-5xl mx-auto">
+      <section id="experience" className={`${sidebarOpen ? 'lg:ml-64' : ''} px-8 py-12 transition-all duration-300`}>
+        <div className="max-w-6xl mx-auto">
           <h2 className="mb-8 text-base sm:text-lg font-semibold text-gray-800">💼 Experience</h2>
           
           <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
@@ -200,8 +205,8 @@ function App() {
       </section>
 
       {/* Education */}
-      <section className="px-8 py-8">
-        <div className="max-w-5xl mx-auto">
+      <section id="education" className={`${sidebarOpen ? 'lg:ml-64' : ''} px-8 py-12 transition-all duration-300`}>
+        <div className="max-w-6xl mx-auto">
           <h2 className="mb-8 text-base sm:text-lg font-semibold text-gray-800">🎓 Education</h2>
           
           <div className="space-y-8">
@@ -223,7 +228,7 @@ function App() {
             </div>
 
             {/* Shaurya International School */}
-            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+            <div className="bg-white rounded-lg shadow-sm p-6 sm:p-8">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                 <div className="mb-2 sm:mb-0">
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800">Shaurya International School, Jammu, J&K</h3>
@@ -242,8 +247,8 @@ function App() {
       </section>
 
       {/* Main Content Grid */}
-      <section className="px-8 py-8">
-        <div className="max-w-5xl mx-auto">
+      <section id="projects" className={`${sidebarOpen ? 'lg:ml-64' : ''} px-8 py-12 transition-all duration-300`}>
+        <div className="max-w-6xl mx-auto">
           {/* Projects Grid */}
             <div className="flex-1">
               <div className="space-y-6">
@@ -305,8 +310,8 @@ function App() {
       </section>
 
       {/* Skills */}
-      <section className="px-8 py-8">
-        <div className="max-w-5xl mx-auto">
+      <section id="skills" className={`${sidebarOpen ? 'lg:ml-64' : ''} px-8 py-12 transition-all duration-300`}>
+        <div className="max-w-6xl mx-auto">
           <h2 className="mb-8 text-base sm:text-lg font-semibold text-gray-800">
             🌸 Skills
           </h2>
@@ -366,8 +371,8 @@ function App() {
       </section>
 
       {/* About Me */}
-      <section className="px-4 sm:px-8 py-8">
-        <div className="max-w-5xl mx-auto">
+      <section id="about" className={`${sidebarOpen ? 'lg:ml-64' : ''} px-4 sm:px-8 py-12 transition-all duration-300`}>
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Anahita Sharma</h2>
           </div>
@@ -383,6 +388,10 @@ function App() {
                 </svg>
                 <span className="text-xs">GitHub</span>
               </a>
+              <a href="https://www.linkedin.com/in/anahita-sharma-4988a01b9/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 text-gray-600 hover:text-pink-400">
+                <span className="w-6 h-6 flex items-center justify-center text-xl">💼</span>
+                <span className="text-xs">LinkedIn</span>
+              </a>
               <a href="https://leetcode.com/u/stuffToDo/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 text-gray-600 hover:text-pink-400">
                 <span className="w-6 h-6 flex items-center justify-center text-xl">🏆</span>
                 <span className="text-xs">LeetCode</span>
@@ -392,16 +401,44 @@ function App() {
         </div>
       </section>
 
-      {/* Visit Site Button */}
-      <div className="fixed bottom-4 left-4 sm:bottom-8 sm:left-8">
-        <button className="flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow text-sm sm:text-base">
-          <span className="text-base sm:text-lg">↗️</span>
-          <span className="font-semibold text-gray-800 hidden sm:inline">Visit site</span>
-        </button>
+      {/* Navigation Sidebar */}
+      <div className={`fixed left-0 top-0 h-screen w-64 bg-white shadow-xl z-10 overflow-y-auto border-r border-gray-100 transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} ${sidebarOpen ? 'block' : 'hidden'}`}>
+        <div className="p-8 pt-12">
+          <nav className="space-y-3">
+            <a href="#experience" className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:text-pink-400 hover:bg-pink-50 rounded-xl transition-all duration-200 group">
+              <span className="text-lg group-hover:scale-110 transition-transform">💼</span>
+              <span>Experience</span>
+            </a>
+            <a href="#education" className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:text-pink-400 hover:bg-pink-50 rounded-xl transition-all duration-200 group">
+              <span className="text-lg group-hover:scale-110 transition-transform">🎓</span>
+              <span>Education</span>
+            </a>
+            <a href="#projects" className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:text-pink-400 hover:bg-pink-50 rounded-xl transition-all duration-200 group">
+              <span className="text-lg group-hover:scale-110 transition-transform">🚀</span>
+              <span>Projects</span>
+            </a>
+            <a href="#skills" className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:text-pink-400 hover:bg-pink-50 rounded-xl transition-all duration-200 group">
+              <span className="text-lg group-hover:scale-110 transition-transform">🌸</span>
+              <span>Skills</span>
+            </a>
+            <a href="#about" className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:text-pink-400 hover:bg-pink-50 rounded-xl transition-all duration-200 group">
+              <span className="text-lg group-hover:scale-110 transition-transform">👤</span>
+              <span>About</span>
+            </a>
+          </nav>
+        </div>
       </div>
 
+      {/* Mobile Sidebar Overlay */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-5 lg:hidden" 
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
       {/* Search Button */}
-      <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8">
+      <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 lg:right-8 z-20">
         <button className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow">
           <Search className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
         </button>

@@ -178,62 +178,64 @@ function App() {
         </div>
       </section>
 
-      {/* Skills */}
+      {/* Experience */}
       <section className="px-8 py-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="mb-8 text-lg font-semibold text-gray-800">
-            🌸 Skills
-          </h2>
-
-          {/* Frontend Skills */}
-          <div className="mb-8">
-            <h3 className="mb-4 text-md font-semibold text-gray-700">🎨 Frontend</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {frontendSkills.map((skill, index) => (
-                <div key={index} className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                  <span className="text-3xl mb-2">{skill.icon}</span>
-                  <p className="text-sm font-semibold text-gray-800 text-center">{skill.name}</p>
-                </div>
-              ))}
+        <div className="max-w-5xl mx-auto">
+          <h2 className="mb-8 text-lg font-semibold text-gray-800">💼 Experience</h2>
+          
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <div className="flex justify-between items-start mb-4">
+              <div>
+                <h3 className="text-xl font-bold text-gray-800">Research Intern – DRDO, Delhi (Office of Cyber)</h3>
+              </div>
+              <span className="text-sm text-gray-500">Dec 2025 – Present</span>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm text-gray-600">• Gaining hands-on exposure to offensive software exploitation techniques, including vulnerability analysis and exploit development fundamentals.</p>
+              <p className="text-sm text-gray-600">• Analyzing Windows internals, executable formats (PE), memory behavior, and low-level program execution for security assessment.</p>
+              <p className="text-sm text-gray-600">• Assisting in controlled lab-based security research under senior scientists, following ethical and organizational security guidelines.</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Backend Skills */}
-          <div className="mb-8">
-            <h3 className="mb-4 text-md font-semibold text-gray-700">⚙️ Backend</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {backendSkills.map((skill, index) => (
-                <div key={index} className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                  <span className="text-3xl mb-2">{skill.icon}</span>
-                  <p className="text-sm font-semibold text-gray-800 text-center">{skill.name}</p>
+      {/* Education */}
+      <section className="px-8 py-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="mb-8 text-lg font-semibold text-gray-800">🎓 Education</h2>
+          
+          <div className="space-y-8">
+            {/* NIT Srinagar */}
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <div className="flex justify-between items-start mb-2">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">National Institute of Technology, Srinagar</h3>
+                  <p className="text-gray-600">Bachelor of Technology in Computer Science & Engineering</p>
                 </div>
-              ))}
+                <span className="text-sm text-gray-500">2023 – 2027</span>
+              </div>
+              <div className="mt-4">
+                <p className="text-pink-600 font-semibold">CGPA: 9.18 / 10</p>
+                <p className="text-sm text-gray-600 mt-2">
+                  <span className="font-semibold">Relevant Coursework:</span> Data Structures & Algorithms, Operating Systems, Database Systems, Software Engineering, Theory of Computation
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* ML Skills */}
-          <div className="mb-8">
-            <h3 className="mb-4 text-md font-semibold text-gray-700">🤖 Machine Learning & Data</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {mlSkills.map((skill, index) => (
-                <div key={index} className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                  <span className="text-3xl mb-2">{skill.icon}</span>
-                  <p className="text-sm font-semibold text-gray-800 text-center">{skill.name}</p>
+            {/* Shaurya International School */}
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <div className="flex justify-between items-start mb-2">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">Shaurya International School, Jammu, J&K</h3>
+                  <p className="text-gray-600">Class XII (CBSE)</p>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Tools & Platforms */}
-          <div>
-            <h3 className="mb-4 text-md font-semibold text-gray-700">🛠️ Tools & Platforms</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {toolsSkills.map((skill, index) => (
-                <div key={index} className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                  <span className="text-3xl mb-2">{skill.icon}</span>
-                  <p className="text-sm font-semibold text-gray-800 text-center">{skill.name}</p>
-                </div>
-              ))}
+              </div>
+              <div className="mt-4">
+                <p className="text-pink-600 font-semibold">Percentage: 93.2%</p>
+                <p className="text-sm text-gray-600 mt-2">
+                  <span className="font-semibold">Subjects:</span> Physics, Chemistry, Mathematics (PCM)
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -302,43 +304,62 @@ function App() {
         </div>
       </section>
 
-      {/* Education */}
+      {/* Skills */}
       <section className="px-8 py-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="mb-8 text-lg font-semibold text-gray-800">🎓 Education</h2>
-          
-          <div className="space-y-8">
-            {/* NIT Srinagar */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">National Institute of Technology, Srinagar</h3>
-                  <p className="text-gray-600">Bachelor of Technology in Computer Science & Engineering</p>
-                </div>
-                <span className="text-sm text-gray-500">2023 – 2027</span>
-              </div>
-              <div className="mt-4">
-                <p className="text-pink-600 font-semibold">CGPA: 9.18 / 10</p>
-                <p className="text-sm text-gray-600 mt-2">
-                  <span className="font-semibold">Relevant Coursework:</span> Data Structures & Algorithms, Operating Systems, Database Systems, Software Engineering, Theory of Computation
-                </p>
-              </div>
-            </div>
+          <h2 className="mb-8 text-lg font-semibold text-gray-800">
+            🌸 Skills
+          </h2>
 
-            {/* Shaurya International School */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">Shaurya International School, Jammu, J&K</h3>
-                  <p className="text-gray-600">Class XII (CBSE)</p>
+          {/* Frontend Skills */}
+          <div className="mb-8">
+            <h3 className="mb-4 text-md font-semibold text-gray-700">🎨 Frontend</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {frontendSkills.map((skill, index) => (
+                <div key={index} className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                  <span className="text-3xl mb-2">{skill.icon}</span>
+                  <p className="text-sm font-semibold text-gray-800 text-center">{skill.name}</p>
                 </div>
-              </div>
-              <div className="mt-4">
-                <p className="text-pink-600 font-semibold">Percentage: 93.2%</p>
-                <p className="text-sm text-gray-600 mt-2">
-                  <span className="font-semibold">Subjects:</span> Physics, Chemistry, Mathematics (PCM)
-                </p>
-              </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Backend Skills */}
+          <div className="mb-8">
+            <h3 className="mb-4 text-md font-semibold text-gray-700">⚙️ Backend</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {backendSkills.map((skill, index) => (
+                <div key={index} className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                  <span className="text-3xl mb-2">{skill.icon}</span>
+                  <p className="text-sm font-semibold text-gray-800 text-center">{skill.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ML Skills */}
+          <div className="mb-8">
+            <h3 className="mb-4 text-md font-semibold text-gray-700">🤖 Machine Learning & Data</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {mlSkills.map((skill, index) => (
+                <div key={index} className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                  <span className="text-3xl mb-2">{skill.icon}</span>
+                  <p className="text-sm font-semibold text-gray-800 text-center">{skill.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Tools & Platforms */}
+          <div>
+            <h3 className="mb-4 text-md font-semibold text-gray-700">🛠️ Tools & Platforms</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {toolsSkills.map((skill, index) => (
+                <div key={index} className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                  <span className="text-3xl mb-2">{skill.icon}</span>
+                  <p className="text-sm font-semibold text-gray-800 text-center">{skill.name}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -346,7 +367,7 @@ function App() {
 
       {/* About Me */}
       <section className="px-8 py-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold text-gray-800">Anahita Sharma</h2>
           </div>

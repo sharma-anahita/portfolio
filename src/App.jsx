@@ -138,28 +138,28 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="px-8 py-12">
+      <section className="px-4 sm:px-8 py-8 sm:py-12">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-12">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             {/* Left Content */}
-            <div className="flex-1">
-              <h1 className="mb-6 text-4xl font-normal">
+            <div className="flex-1 text-center lg:text-left">
+              <h1 className="mb-4 sm:mb-6 text-3xl sm:text-4xl font-normal">
                 Hey, I'm <span className="font-bold text-pink-400">Anahita Sharma</span> 👋
               </h1>
               
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-gray-700 leading-relaxed text-sm sm:text-base">
                 A <span className="font-semibold text-pink-400">Computer Science</span> undergraduate at <span className="font-semibold">NIT Srinagar</span> who enjoys building <span className="font-semibold text-pink-400">reliable backend systems</span> and <span className="font-semibold text-pink-400">full-stack web applications</span>
               </p>
 
               <div className="mt-8">
                 <p className="mb-3 text-sm font-semibold text-gray-700">Let's connect</p>
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <input 
                     type="email" 
                     placeholder="Enter your email address" 
                     className="flex-1 px-4 py-3 text-sm border-2 border-gray-200 rounded-md focus:outline-none focus:border-pink-300"
                   />
-                  <button className="px-6 py-3 text-sm font-medium text-white bg-pink-400 rounded-md hover:bg-pink-500">
+                  <button className="px-6 py-3 text-sm font-medium text-white bg-pink-400 rounded-md hover:bg-pink-500 whitespace-nowrap">
                     Get Started
                   </button>
                 </div>
@@ -167,10 +167,10 @@ function App() {
             </div>
 
             {/* Right Image */}
-            <div className="flex-1">
-              <div className="rounded-lg overflow-hidden bg-gradient-to-br from-pink-200 to-orange-300 aspect-[4/3]">
-                <div className="w-full h-full flex items-end justify-center p-8">
-                  <div className="w-24 h-32 bg-gray-800 rounded-sm"></div>
+            <div className="flex-shrink-0">
+              <div className="rounded-lg overflow-hidden bg-gradient-to-br from-pink-200 to-orange-300 aspect-square w-48 sm:w-64 lg:w-80">
+                <div className="w-full h-full flex items-end justify-center p-4 sm:p-8">
+                  <div className="w-16 h-20 sm:w-20 sm:h-24 lg:w-24 lg:h-32 bg-gray-800 rounded-sm"></div>
                 </div>
               </div>
             </div>
@@ -181,14 +181,14 @@ function App() {
       {/* Experience */}
       <section className="px-8 py-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="mb-8 text-lg font-semibold text-gray-800">💼 Experience</h2>
+          <h2 className="mb-8 text-base sm:text-lg font-semibold text-gray-800">💼 Experience</h2>
           
-          <div className="bg-white rounded-lg shadow-sm p-6">
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <h3 className="text-xl font-bold text-gray-800">Research Intern – DRDO, Delhi (Office of Cyber)</h3>
+          <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+              <div className="mb-2 sm:mb-0">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800">Research Intern – DRDO, Delhi (Office of Cyber)</h3>
               </div>
-              <span className="text-sm text-gray-500">Dec 2025 – Present</span>
+              <span className="text-sm text-gray-500 self-start sm:self-auto">Dec 2025 – Present</span>
             </div>
             <div className="space-y-2">
               <p className="text-sm text-gray-600">• Gaining hands-on exposure to offensive software exploitation techniques, including vulnerability analysis and exploit development fundamentals.</p>
@@ -202,17 +202,17 @@ function App() {
       {/* Education */}
       <section className="px-8 py-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="mb-8 text-lg font-semibold text-gray-800">🎓 Education</h2>
+          <h2 className="mb-8 text-base sm:text-lg font-semibold text-gray-800">🎓 Education</h2>
           
           <div className="space-y-8">
             {/* NIT Srinagar */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">National Institute of Technology, Srinagar</h3>
-                  <p className="text-gray-600">Bachelor of Technology in Computer Science & Engineering</p>
+            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                <div className="mb-2 sm:mb-0">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-800">National Institute of Technology, Srinagar</h3>
+                  <p className="text-gray-600 text-sm sm:text-base">Bachelor of Technology in Computer Science & Engineering</p>
                 </div>
-                <span className="text-sm text-gray-500">2023 – 2027</span>
+                <span className="text-sm text-gray-500 self-start sm:self-auto">2023 – 2027</span>
               </div>
               <div className="mt-4">
                 <p className="text-pink-600 font-semibold">CGPA: 9.18 / 10</p>
@@ -223,11 +223,11 @@ function App() {
             </div>
 
             {/* Shaurya International School */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">Shaurya International School, Jammu, J&K</h3>
-                  <p className="text-gray-600">Class XII (CBSE)</p>
+            <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                <div className="mb-2 sm:mb-0">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-800">Shaurya International School, Jammu, J&K</h3>
+                  <p className="text-gray-600 text-sm sm:text-base">Class XII (CBSE)</p>
                 </div>
               </div>
               <div className="mt-4">
@@ -248,8 +248,8 @@ function App() {
             <div className="flex-1">
               <div className="space-y-6">
                 {projects.map((project, index) => (
-                  <div key={index} className="flex gap-6 bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                    <div className="w-32 h-32 flex-shrink-0 bg-gradient-to-br from-pink-200 via-purple-200 to-orange-300 rounded-lg overflow-hidden">
+                  <div key={index} className="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-white rounded-lg shadow-sm p-4 sm:p-6 hover:shadow-md transition-shadow">
+                    <div className="w-full sm:w-32 h-32 flex-shrink-0 bg-gradient-to-br from-pink-200 via-purple-200 to-orange-300 rounded-lg overflow-hidden mx-auto sm:mx-0">
                       <div className="relative w-full h-full">
                         <span className="absolute top-2 left-2 px-3 py-1 text-xs font-medium text-white bg-purple-500 rounded-full">
                           {project.category}
@@ -258,20 +258,20 @@ function App() {
                     </div>
                     
                     <div className="flex-1">
-                      <div className="flex items-start justify-between mb-2">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
                         <div className="flex-1">
-                          <h3 className="text-xl font-bold text-gray-800 mb-2 hover:text-pink-400 cursor-pointer">
+                          <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 hover:text-pink-400 cursor-pointer text-center sm:text-left">
                             {project.title}
                           </h3>
                         </div>
                       </div>
                       
-                      <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                      <p className="text-sm text-gray-600 leading-relaxed mb-4 text-center sm:text-left">
                         {project.description}
                       </p>
 
-                      <div className="flex items-center justify-between">
-                        <div className="flex gap-2 flex-wrap">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
                           {project.technologies.map((tech, i) => (
                             <span key={i} className="px-3 py-1 text-xs bg-pink-100 text-pink-600 rounded-md flex items-center gap-1">
                               <span>{techIcons[tech] || '💻'}</span>
@@ -279,7 +279,7 @@ function App() {
                             </span>
                           ))}
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center justify-center sm:justify-end gap-2">
                           {project.github && (
                             <a href={project.github} target="_blank" rel="noopener noreferrer" 
                                className="text-gray-600 hover:text-pink-400 transition-colors">
@@ -307,7 +307,7 @@ function App() {
       {/* Skills */}
       <section className="px-8 py-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="mb-8 text-lg font-semibold text-gray-800">
+          <h2 className="mb-8 text-base sm:text-lg font-semibold text-gray-800">
             🌸 Skills
           </h2>
 
@@ -366,13 +366,13 @@ function App() {
       </section>
 
       {/* About Me */}
-      <section className="px-8 py-8">
+      <section className="px-4 sm:px-8 py-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-6">
-            <h2 className="text-3xl font-bold text-gray-800">Anahita Sharma</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Anahita Sharma</h2>
           </div>
           <div className="flex justify-center">
-            <div className="flex gap-6 text-sm">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm">
               <a href="https://www.instagram.com/anahita_sharma_.22/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 text-gray-600 hover:text-pink-400">
                 <span className="w-6 h-6 flex items-center justify-center text-xl">📷</span>
                 <span className="text-xs">Instagram</span>
@@ -393,17 +393,17 @@ function App() {
       </section>
 
       {/* Visit Site Button */}
-      <div className="fixed bottom-8 left-8">
-        <button className="flex items-center gap-2 px-6 py-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow">
-          <span className="text-lg">↗️</span>
-          <span className="font-semibold text-gray-800">Visit site</span>
+      <div className="fixed bottom-4 left-4 sm:bottom-8 sm:left-8">
+        <button className="flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow text-sm sm:text-base">
+          <span className="text-base sm:text-lg">↗️</span>
+          <span className="font-semibold text-gray-800 hidden sm:inline">Visit site</span>
         </button>
       </div>
 
       {/* Search Button */}
-      <div className="fixed bottom-8 right-8">
-        <button className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow">
-          <Search className="w-6 h-6 text-gray-700" />
+      <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8">
+        <button className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow">
+          <Search className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
         </button>
       </div>
     </div>

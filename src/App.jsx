@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Grid, Twitter, Facebook, Globe, Star, Menu, X } from 'lucide-react';
+import { Search, Twitter, Facebook, Globe, Star, Menu, X } from 'lucide-react';
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -122,7 +122,8 @@ function App() {
       {/* Hamburger Menu Button */}
       <button 
         onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="fixed top-4 left-4 z-20 p-2 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+        aria-label="Toggle sidebar"
+        className={`fixed top-4 left-4 z-30 p-2 rounded-lg transition-shadow ${sidebarOpen ? 'bg-white shadow-lg' : 'bg-[#fef5f3]'}`}
       >
         <Menu className="w-5 h-5 text-gray-600" />
       </button>
@@ -137,9 +138,7 @@ function App() {
           </div>
         </div> */}
 
-        <div className="flex items-center gap-3">
-          <Grid className="w-5 h-5 text-gray-700" />
-        </div>
+        {/* ...existing code... */}
       </header>
 
       {/* Hero Section */}
@@ -173,10 +172,12 @@ function App() {
 
             {/* Right Image */}
             <div className="flex-shrink-0">
-              <div className="rounded-lg overflow-hidden bg-gradient-to-br from-pink-200 to-orange-300 aspect-square w-48 sm:w-64 lg:w-80">
-                <div className="w-full h-full flex items-end justify-center p-4 sm:p-8">
-                  <div className="w-16 h-20 sm:w-20 sm:h-24 lg:w-24 lg:h-32 bg-gray-800 rounded-sm"></div>
-                </div>
+              <div className="rounded-lg overflow-hidden bg-gradient-to-br from-pink-200 to-orange-300 aspect-square w-48 sm:w-64 lg:w-80 flex items-center justify-center">
+                <img
+                  src="/hi.jpeg"
+                  alt="Hero"
+                  className="object-cover w-full h-full rounded-lg shadow-lg border-4 border-white"
+                />
               </div>
             </div>
           </div>
@@ -370,31 +371,29 @@ function App() {
         </div>
       </section>
 
-      {/* About Me */}
-      <section id="about" className={`${sidebarOpen ? 'lg:ml-64' : ''} px-4 sm:px-8 py-12 transition-all duration-300`}>
-        <div className="max-w-6xl mx-auto">
+      {/* Contact Me */}
+      <section id="contact" className={`${sidebarOpen ? 'lg:ml-64' : ''} px-4 sm:px-8 py-12 transition-all duration-300`}>
+        <div className="max-w-2xl mx-auto">
           <div className="text-center mb-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Anahita Sharma</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Contact Me</h2>
+            <p className="mt-2 text-gray-600">Feel free to reach out for collaborations, questions, or just to connect!</p>
           </div>
-          <div className="flex justify-center">
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm">
-              <a href="https://www.instagram.com/anahita_sharma_.22/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 text-gray-600 hover:text-pink-400">
-                <span className="w-6 h-6 flex items-center justify-center text-xl">📷</span>
-                <span className="text-xs">Instagram</span>
-              </a>
-              <a href="https://github.com/sharma-anahita" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 text-gray-600 hover:text-pink-400">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                <span className="text-xs">GitHub</span>
-              </a>
-              <a href="https://www.linkedin.com/in/anahita-sharma-4988a01b9/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 text-gray-600 hover:text-pink-400">
-                <span className="w-6 h-6 flex items-center justify-center text-xl">💼</span>
+          <div className="flex flex-col gap-4 items-center">
+            <a href="mailto:sharma.anahita.as@gmail.com" className="flex items-center gap-2 text-pink-500 hover:underline text-lg font-medium">
+              <span className="text-xl">✉️</span> sharma.anahita.as@gmail.com
+            </a>
+            <div className="flex gap-6 mt-2">
+              <a href="https://www.linkedin.com/in/anahita-sharma-4988a01b9/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-gray-600 hover:text-pink-400 text-lg">
+                <span className="text-2xl">💼</span>
                 <span className="text-xs">LinkedIn</span>
               </a>
-              <a href="https://leetcode.com/u/stuffToDo/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 text-gray-600 hover:text-pink-400">
-                <span className="w-6 h-6 flex items-center justify-center text-xl">🏆</span>
-                <span className="text-xs">LeetCode</span>
+              <a href="https://github.com/sharma-anahita" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-gray-600 hover:text-pink-400 text-lg">
+                <span className="text-2xl">🐙</span>
+                <span className="text-xs">GitHub</span>
+              </a>
+              <a href="https://www.instagram.com/anahita_sharma_.22/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-gray-600 hover:text-pink-400 text-lg">
+                <span className="text-2xl">📷</span>
+                <span className="text-xs">Instagram</span>
               </a>
             </div>
           </div>
@@ -421,9 +420,9 @@ function App() {
               <span className="text-lg group-hover:scale-110 transition-transform">🌸</span>
               <span>Skills</span>
             </a>
-            <a href="#about" className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:text-pink-400 hover:bg-pink-50 rounded-xl transition-all duration-200 group">
-              <span className="text-lg group-hover:scale-110 transition-transform">👤</span>
-              <span>About</span>
+            <a href="#contact" className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:text-pink-400 hover:bg-pink-50 rounded-xl transition-all duration-200 group">
+              <span className="text-lg group-hover:scale-110 transition-transform">✉️</span>
+              <span>Contact Me</span>
             </a>
           </nav>
         </div>

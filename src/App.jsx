@@ -98,7 +98,7 @@ function App() {
       title: 'CineTracker',
       technologies: ['React', 'TMDB API', 'Appwrite'],
       github: 'https://github.com/sharma-anahita/CineTracker',
-      live: 'https://cinetracker.vercel.app',
+      live: 'https://cine-tracker-psi.vercel.app/',
       description: 'Built a movie discovery and tracking application using React with dynamic search and browsing features powered by the TMDb API. Designed modular, reusable components and handled asynchronous API calls and state management for efficient data rendering. Implemented persistent watchlist functionality with backend integration, focusing on clean architecture and scalable data handling.'
     },
     {

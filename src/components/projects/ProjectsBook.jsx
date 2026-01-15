@@ -4,33 +4,36 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import BookPage from './BookPage';
 
 const ProjectsBook = ({ projects, onClose }) => {
+  const [isOpen, setIsOpen] = useState(false);
+    // Animate book opening on mount
+    useEffect(() => {
+      setTimeout(() => setIsOpen(true), 10);
+    }, []);
   const [currentPage, setCurrentPage] = useState(0);
   const [isFlipping, setIsFlipping] = useState(false);
   const [flipDirection, setFlipDirection] = useState(null);
   const totalPages = projects.length;
 
   const handleNext = () => {
-    if (currentPage < totalPages - 1 && !isFlipping) {
-      setIsFlipping(true);
-      setFlipDirection('next');
-      setTimeout(() => {
-        setCurrentPage(prev => prev + 1);
-        setIsFlipping(false);
-        setFlipDirection(null);
-      }, 600);
-    }
+    if (isFlipping) return;
+    setIsFlipping(true);
+    setFlipDirection('next');
+    setTimeout(() => {
+      setCurrentPage(prev => (prev < totalPages - 1 ? prev + 1 : 0));
+      setIsFlipping(false);
+      setFlipDirection(null);
+    }, 600);
   };
 
   const handlePrev = () => {
-    if (currentPage > 0 && !isFlipping) {
-      setIsFlipping(true);
-      setFlipDirection('prev');
-      setTimeout(() => {
-        setCurrentPage(prev => prev - 1);
-        setIsFlipping(false);
-        setFlipDirection(null);
-      }, 600);
-    }
+    if (isFlipping) return;
+    setIsFlipping(true);
+    setFlipDirection('prev');
+    setTimeout(() => {
+      setCurrentPage(prev => (prev > 0 ? prev - 1 : totalPages - 1));
+      setIsFlipping(false);
+      setFlipDirection(null);
+    }, 600);
   };
 
   useEffect(() => {
@@ -71,7 +74,10 @@ const ProjectsBook = ({ projects, onClose }) => {
   return (
     <div className="relative">
       <button
-        onClick={onClose}
+        onClick={() => {
+          setIsOpen(false);
+          setTimeout(onClose, 400);
+        }}
         className="absolute -top-12 right-0 p-2 rounded-full bg-white shadow-lg hover:shadow-xl transition-all z-50 hover:bg-pink-50"
         aria-label="Close book"
       >
@@ -84,21 +90,25 @@ const ProjectsBook = ({ projects, onClose }) => {
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        <div className="book-wrapper relative w-full max-w-5xl mx-auto bg-white rounded-lg shadow-2xl overflow-hidden" style={{ minHeight: '600px' }}>
+        <div
+          className={`book-wrapper relative w-full max-w-5xl mx-auto bg-white rounded-lg shadow-2xl overflow-hidden transition-all duration-500 ${isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0 pointer-events-none'}`}
+          style={{ minHeight: '600px' }}
+        >
           <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 shadow-inner z-20 transform -translate-x-1/2" />
-          
           <div className="book-spread grid grid-cols-2 relative" style={{ minHeight: '600px' }}>
             <BookPage
               project={projects[currentPage]}
               side="left"
               isFlipping={isFlipping}
               flipDirection={flipDirection}
+              onPageClick={!isFlipping ? handlePrev : undefined}
             />
             <BookPage
               project={projects[currentPage]}
               side="right"
               isFlipping={isFlipping}
               flipDirection={flipDirection}
+              onPageClick={!isFlipping ? handleNext : undefined}
             />
           </div>
         </div>

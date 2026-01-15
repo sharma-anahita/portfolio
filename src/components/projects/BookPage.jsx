@@ -3,20 +3,31 @@ import React from 'react';
 import { Globe } from 'lucide-react';
 import { techIcons } from '../../data/techIcons';
 
-const BookPage = ({ project, side, isFlipping, flipDirection }) => {
+const BookPage = ({ project, side, isFlipping, flipDirection, onPageClick }) => {
   const isLeftPage = side === 'left';
+  // Animate right page on 'next', left page on 'prev'
   const shouldAnimate = isFlipping && (
-    (flipDirection === 'next' && isLeftPage) ||
-    (flipDirection === 'prev' && !isLeftPage)
+    (flipDirection === 'next' && !isLeftPage) ||
+    (flipDirection === 'prev' && isLeftPage)
   );
 
   return (
     <div
       className={`book-page relative p-8 sm:p-12 ${
         isLeftPage ? 'pr-10 sm:pr-16 border-r border-gray-100' : 'pl-10 sm:pl-16'
-      } ${shouldAnimate ? 'page-flip' : ''}`}
+      } ${shouldAnimate ? 'page-flip' : ''} ${onPageClick ? 'cursor-pointer hover:bg-pink-50 transition-colors' : ''}`}
       style={{
         transformOrigin: isLeftPage ? 'right center' : 'left center',
+      }}
+      onClick={e => {
+        // Prevent clicks on links or buttons from triggering page turn
+        if (!onPageClick) return;
+        let el = e.target;
+        while (el && el !== e.currentTarget) {
+          if (el.tagName === 'A' || el.tagName === 'BUTTON') return;
+          el = el.parentElement;
+        }
+        onPageClick();
       }}
     >
       {isLeftPage ? (

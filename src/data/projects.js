@@ -34,4 +34,38 @@ export const projects = [
     live: null,
     description: 'Conducted multi-variable analysis on academic performance. Engineered learning metrics and computed statistical indicators. Visualized attendance vs performance trends using bar, line, and pie charts for comprehensive data insights.'
   }
+  ,
+  {
+    image: '/api/placeholder/130/100',
+    category: 'Automation / Data Pipeline',
+    title: 'Gmail to Google Sheets Automation',
+    technologies: ['Python', 'Gmail API', 'Google Sheets API', 'OAuth 2.0', 'BeautifulSoup'],
+    github: 'https://github.com/sharma-anahita/gmail-to-sheets',
+    live: null,
+    description: 'Built a Python-based automation system that ingests unread emails from a Gmail inbox and logs structured data into Google Sheets. The pipeline securely authenticates using OAuth 2.0, parses email headers and bodies, prevents duplicate processing using Gmail labels, and ensures reliable execution through structured logging and retry logic. Designed for real-world usability with clean architecture and API resilience in mind.',
+    highlights: [
+      'Secure OAuth 2.0 authentication with Gmail & Google Sheets APIs',
+      'Duplicate-prevention using Gmail label–based state management',
+      'HTML-to-plain-text email parsing for clean, readable data',
+      'Robust logging and retry logic for API reliability'
+    ],
+    
+  },
+  {
+    
+    image: '/api/placeholder/130/100',
+    category: 'AI / Agent Systems',
+    title: 'AutoStream Conversational Agent',
+    technologies: ['Python', 'LangGraph', 'RAG', 'FAISS', 'LLMs'],
+    github: 'https://github.com/sharma-anahita/autostream-agent',
+    live: null,
+    description: 'Developed a stateful, multi-turn conversational AI agent using LangGraph and Retrieval-Augmented Generation (RAG). The agent supports intent detection, product queries, and controlled lead capture through deterministic workflows. Designed with explicit state management to ensure safe tool execution, prevent intent drift during multi-step interactions, and enable reliable real-world conversational behavior.',
+    highlights: [
+      'Explicit agent state for reliable multi-turn conversations',
+      'Deterministic control flow using LangGraph nodes and transitions',
+      'Retrieval-Augmented Generation (RAG) over a knowledge base using FAISS',
+      'Safe lead-capture workflow with intent freezing during high-intent states'
+    ]
+    
+  }
 ];

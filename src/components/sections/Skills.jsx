@@ -1,5 +1,5 @@
 import React from 'react';
-import { frontendSkills, backendSkills, mlSkills, toolsSkills } from '../../data/skills';
+import { frontendSkills, backendSkills, dataSkills, aiSkills, toolsSkills } from '../../data/skills';
 
 const Skills = () => {
   const SkillCard = ({ skill }) => (
@@ -35,9 +35,18 @@ const Skills = () => {
         </div>
 
         <div className="mb-8">
-          <h3 className="mb-4 text-md font-semibold text-gray-700">🤖 Machine Learning & Data</h3>
+          <h3 className="mb-4 text-md font-semibold text-gray-700">📊 Data & Analysis</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {mlSkills.map((skill, index) => (
+            {dataSkills.map((skill, index) => (
+              <SkillCard key={index} skill={skill} />
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-8">
+          <h3 className="mb-4 text-md font-semibold text-gray-700">🧠 AI & Agent Systems</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {aiSkills.map((skill, index) => (
               <SkillCard key={index} skill={skill} />
             ))}
           </div>

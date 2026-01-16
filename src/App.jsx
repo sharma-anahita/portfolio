@@ -34,11 +34,18 @@ function App() {
         />
       ) : null}
 
+      {!isMobile && (
+        <DesktopSidebar sidebarOpen={sidebarOpen} />
+      )}
+
       <div
-        className={`transition-all duration-300
+        className={`
           ${sidebarOpen && isMobile ? 'mt-40 md:mt-0' : 'mt-0'}
-          ${sidebarOpen && !isMobile ? 'ml-64' : ''}
+          ${sidebarOpen && !isMobile ? 'ml-64' : 'md:ml-16 md:peer-hover:ml-60'}
         `}
+        style={{
+          transition: 'margin-top 300ms, margin-left 300ms 50ms'
+        }}
       >
         <Hero />
         <Experience />
@@ -47,10 +54,6 @@ function App() {
         <Skills />
         <Contact />
       </div>
-
-      {!isMobile && (
-        <DesktopSidebar sidebarOpen={sidebarOpen} />
-      )}
 
       {sidebarOpen && isMobile && (
         <div

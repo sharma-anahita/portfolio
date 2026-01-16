@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const Hero = () => {
   const [email, setEmail] = useState('');
@@ -78,7 +79,14 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="flex-1 text-center lg:text-left">
             <h1 className="mb-4 sm:mb-6 text-3xl sm:text-4xl font-normal">
-              Hey, I'm <span className="font-bold text-pink-400">Anahita Sharma</span> 👋
+              Hey, I'm <span className="font-bold text-pink-400">Anahita Sharma</span>{' '}
+              <span className="inline-block align-baseline w-10 h-10 scale-125 -translate-y-1">
+                <DotLottieReact
+                  src="https://lottie.host/4e45f9c6-1c0e-4018-aa4d-2bc0c0a5067f/12N6aYiYjl.lottie"
+                  loop
+                  autoplay
+                />
+              </span>
             </h1>
             <p className="mb-6 text-gray-700 leading-relaxed text-sm sm:text-base">
               A <span className="font-semibold text-pink-400">Computer Science</span> undergraduate at <span className="font-semibold">NIT Srinagar</span> who enjoys building <span className="font-semibold text-pink-400">reliable backend systems</span> and <span className="font-semibold text-pink-400">full-stack web applications</span>

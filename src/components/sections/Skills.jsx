@@ -3,7 +3,7 @@ import { frontendSkills, backendSkills, dataSkills, aiSkills, toolsSkills } from
 
 const Skills = () => {
   const SkillCard = ({ skill }) => (
-    <div className="skill-card flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+    <div className="skill-card flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm transition-all cursor-pointer md:hover:shadow-lg md:hover:-translate-y-1 md:hover:scale-105">
       <span className="text-3xl mb-2">{skill.icon}</span>
       <p className="text-sm font-semibold text-gray-800 text-center">{skill.name}</p>
     </div>

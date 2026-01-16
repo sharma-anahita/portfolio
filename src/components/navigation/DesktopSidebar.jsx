@@ -11,17 +11,17 @@ const DesktopSidebar = ({ sidebarOpen }) => {
   ];
 
   return (
-    <div className={`fixed left-0 top-0 h-screen w-64 bg-white shadow-xl z-10 overflow-y-auto border-r border-gray-100 transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} ${sidebarOpen ? 'block' : 'hidden'}`}>
-      <div className="p-8 pt-12">
-        <nav className="space-y-3">
+    <div className={`peer group fixed left-0 top-0 h-screen md:w-16 md:hover:w-60 w-64 bg-white shadow-xl z-10 overflow-hidden border-r border-gray-100 transition-all duration-300 md:translate-x-0 md:block ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} ${sidebarOpen ? 'block' : 'hidden'}`}>
+      <div className="md:pt-12 pt-12 w-60">
+        <nav className="md:space-y-1 space-y-3">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:text-pink-400 hover:bg-pink-50 rounded-xl transition-all duration-200 group"
+              className="flex items-center md:gap-3 gap-3 md:px-0 px-4 md:py-3 py-3 md:pl-5 text-sm font-medium text-gray-700 hover:text-pink-400 hover:bg-pink-50 md:rounded-none rounded-xl transition-all duration-200 whitespace-nowrap md:justify-start"
             >
-              <span className="text-lg group-hover:scale-110 transition-transform">{item.icon}</span>
-              <span>{item.label}</span>
+              <span className="text-lg md:min-w-[24px]">{item.icon}</span>
+              <span className="md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200">{item.label}</span>
             </a>
           ))}
         </nav>

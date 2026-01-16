@@ -58,15 +58,18 @@ const BookPage = ({ project, side, isFlipping, flipDirection, onPageClick }) => 
               Tech Stack
             </h4>
             <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1.5 text-xs bg-pink-100 text-pink-600 rounded-md flex items-center gap-1.5 shadow-sm"
-                >
-                  <span>{techIcons[tech] || '💻'}</span>
-                  <span className="font-medium">{tech}</span>
-                </span>
-              ))}
+              {project.technologies.map((tech, i) => {
+                const IconComponent = techIcons[tech];
+                return (
+                  <span
+                    key={i}
+                    className="px-3 py-1.5 text-xs bg-pink-100 text-pink-600 rounded-md flex items-center gap-1.5 shadow-sm"
+                  >
+                    {IconComponent ? <IconComponent className="w-4 h-4" /> : <span>💻</span>}
+                    <span className="font-medium">{tech}</span>
+                  </span>
+                );
+              })}
             </div>
           </div>
 

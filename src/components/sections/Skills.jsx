@@ -6,6 +6,7 @@ const Skills = () => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
     const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
+    const [iconTilt, setIconTilt] = useState({ rotateX: 0, rotateY: 0 });
 
     const handleMouseMove = (e) => {
       const rect = e.currentTarget.getBoundingClientRect();
@@ -23,11 +24,18 @@ const Skills = () => {
         rotateX: distY * -8,
         rotateY: distX * 8,
       });
+
+      // Icon gets slightly different tilt for personality
+      setIconTilt({
+        rotateX: distY * -6,
+        rotateY: distX * 6,
+      });
     };
 
     const handleMouseLeave = () => {
       setIsHovering(false);
       setTilt({ rotateX: 0, rotateY: 0 });
+      setIconTilt({ rotateX: 0, rotateY: 0 });
     };
 
     return (
@@ -51,7 +59,15 @@ const Skills = () => {
             }}
           />
         )}
-        <span className="text-3xl mb-2 relative z-10">{skill.icon}</span>
+        <span 
+          className="text-3xl mb-2 relative z-10 inline-block transition-transform duration-300 md:group-hover:scale-125"
+          style={{
+            transform: `perspective(600px) rotateX(${iconTilt.rotateX}deg) rotateY(${iconTilt.rotateY}deg) scale(${isHovering ? 1.2 : 1})`,
+            transition: isHovering ? 'transform 0.2s ease-out' : 'transform 0.3s ease-out',
+          }}
+        >
+          {skill.icon}
+        </span>
         <p className="text-sm font-semibold text-gray-800 text-center relative z-10">{skill.name}</p>
       </div>
     );

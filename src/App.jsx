@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Search } from 'lucide-react';
 import { useIsMobile } from './hooks/useIsMobile';
 import HamburgerButton from './components/navigation/HamburgerButton';
 import MobileNav from './components/navigation/MobileNav';
@@ -61,12 +60,6 @@ function App() {
           onClick={() => setSidebarOpen(false)}
         />
       )}
-
-      <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 lg:right-8 z-20">
-        <button className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow">
-          <Search className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
-        </button>
-      </div>
     </div>
   );
 }

@@ -1,7 +1,25 @@
 import React, { useState } from 'react';
 import { frontendSkills, backendSkills, dataSkills, aiSkills, toolsSkills } from '../../data/skills';
+import useScrollReveal from '../../hooks/useScrollReveal';
 
 const Skills = () => {
+  // Animated wrapper component for scroll reveal
+  const AnimatedCard = ({ children, index }) => {
+    const [ref, isVisible] = useScrollReveal();
+    
+    return (
+      <div
+        ref={ref}
+        className={`transition-all duration-700 ease-out ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+        }`}
+        style={{ transitionDelay: `${index * 50}ms` }}
+      >
+        {children}
+      </div>
+    );
+  };
+
   const SkillCard = ({ skill }) => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
@@ -93,7 +111,9 @@ const Skills = () => {
           <h3 className="mb-4 text-md font-semibold text-gray-700">🎨 Frontend</h3>
           <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {frontendSkills.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
+              <AnimatedCard key={index} index={index}>
+                <SkillCard skill={skill} />
+              </AnimatedCard>
             ))}
           </div>
         </div>
@@ -102,7 +122,9 @@ const Skills = () => {
           <h3 className="mb-4 text-md font-semibold text-gray-700">⚙️ Backend</h3>
           <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {backendSkills.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
+              <AnimatedCard key={index} index={index}>
+                <SkillCard skill={skill} />
+              </AnimatedCard>
             ))}
           </div>
         </div>
@@ -111,7 +133,9 @@ const Skills = () => {
           <h3 className="mb-4 text-md font-semibold text-gray-700">📊 Data & Analysis</h3>
           <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {dataSkills.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
+              <AnimatedCard key={index} index={index}>
+                <SkillCard skill={skill} />
+              </AnimatedCard>
             ))}
           </div>
         </div>
@@ -120,7 +144,9 @@ const Skills = () => {
           <h3 className="mb-4 text-md font-semibold text-gray-700">🧠 AI & Agent Systems</h3>
           <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {aiSkills.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
+              <AnimatedCard key={index} index={index}>
+                <SkillCard skill={skill} />
+              </AnimatedCard>
             ))}
           </div>
         </div>
@@ -129,7 +155,9 @@ const Skills = () => {
           <h3 className="mb-4 text-md font-semibold text-gray-700">🛠️ Tools & Platforms</h3>
           <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {toolsSkills.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
+              <AnimatedCard key={index} index={index}>
+                <SkillCard skill={skill} />
+              </AnimatedCard>
             ))}
           </div>
         </div>

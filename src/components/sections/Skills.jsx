@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { frontendSkills, backendSkills, dataSkills, aiSkills, toolsSkills } from '../../data/skills';
+import { frontendSkills, backendSkills, dataSkills, aiSkills, toolsSkills, cyberSecuritySkills, skillsCategories } from '../../data/skills';
 import useScrollReveal from '../../hooks/useScrollReveal';
 
 const Skills = () => {
@@ -107,60 +107,18 @@ const Skills = () => {
           🌸 Skills
         </h2>
         
-        <div className="mb-8">
-          <h3 className="mb-4 text-md font-semibold text-gray-700">🎨 Frontend</h3>
-          <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {frontendSkills.map((skill, index) => (
-              <AnimatedCard key={index} index={index}>
-                <SkillCard skill={skill} />
-              </AnimatedCard>
-            ))}
+        {skillsCategories.map((category, categoryIndex) => (
+          <div key={category.id} className="mb-8">
+            <h3 className="mb-4 text-md font-semibold text-gray-700">{category.title}</h3>
+            <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {category.skills.map((skill, skillIndex) => (
+                <AnimatedCard key={`${category.id}-${skillIndex}`} index={categoryIndex * 10 + skillIndex}>
+                  <SkillCard skill={skill} />
+                </AnimatedCard>
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div className="mb-8">
-          <h3 className="mb-4 text-md font-semibold text-gray-700">⚙️ Backend</h3>
-          <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {backendSkills.map((skill, index) => (
-              <AnimatedCard key={index} index={index}>
-                <SkillCard skill={skill} />
-              </AnimatedCard>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-8">
-          <h3 className="mb-4 text-md font-semibold text-gray-700">📊 Data & Analysis</h3>
-          <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {dataSkills.map((skill, index) => (
-              <AnimatedCard key={index} index={index}>
-                <SkillCard skill={skill} />
-              </AnimatedCard>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-8">
-          <h3 className="mb-4 text-md font-semibold text-gray-700">🧠 AI & Agent Systems</h3>
-          <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {aiSkills.map((skill, index) => (
-              <AnimatedCard key={index} index={index}>
-                <SkillCard skill={skill} />
-              </AnimatedCard>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="mb-4 text-md font-semibold text-gray-700">🛠️ Tools & Platforms</h3>
-          <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {toolsSkills.map((skill, index) => (
-              <AnimatedCard key={index} index={index}>
-                <SkillCard skill={skill} />
-              </AnimatedCard>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

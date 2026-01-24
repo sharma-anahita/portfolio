@@ -1,4 +1,3 @@
-
 export const frontendSkills = [
   { name: 'HTML', icon: '🌐' },
   { name: 'CSS', icon: '🎨' },
@@ -45,4 +44,48 @@ export const toolsSkills = [
   { name: 'Cloudinary', icon: '☁️' },
   { name: 'Multer', icon: '📤' },
   { name: 'Appwrite', icon: '🧩' }
+];
+
+// 🆕 DRDO / Cybersecurity Skills
+export const cyberSecuritySkills = [
+  { name: 'WinDbg', icon: '🪟' },
+  { name: 'Immunity Debugger', icon: '🧪' },
+  { name: 'Metasploit Framework', icon: '💥' },
+  { name: 'MSFvenom', icon: '🧬' }, 
+  { name: 'Vulnerability Analysis', icon: '🔎' }, ,
+  { name: 'Debugging (Low-level)', icon: '🐞' }
+];
+
+// Skills categories configuration - single source of truth for rendering
+export const skillsCategories = [
+  {
+    id: 'frontend',
+    title: '🎨 Frontend',
+    skills: frontendSkills
+  },
+  {
+    id: 'backend',
+    title: '⚙️ Backend',
+    skills: backendSkills
+  },
+  {
+    id: 'data',
+    title: '📊 Data & Analysis',
+    skills: dataSkills
+  },
+  {
+    id: 'ai',
+    title: '🧠 AI & Agent Systems',
+    skills: aiSkills
+  },
+  {
+    id: 'tools',
+    title: '🛠️ Tools & Platforms',
+    skills: toolsSkills
+  },
+  {
+    id: 'cybersecurity',
+    title: '🔒 Cybersecurity',
+    skills: cyberSecuritySkills
+  }
 ];

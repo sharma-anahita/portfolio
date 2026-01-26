@@ -1,5 +1,30 @@
 export const projects = [
   {
+  image: '/api/placeholder/130/100',
+  category: 'Systems',
+  title: 'Custom Unix-like Shell (C)',
+  technologies: [
+    'C',
+    'POSIX',
+    'Process Management',
+    'Environment Variables',
+    'Custom Built-ins',
+    'Memory Management'
+  ],
+  github: 'https://github.com/sharma-anahita/custom-shell',
+  live: null,
+  description:
+    'Built a custom Unix-like shell from scratch in C with support for command parsing, PATH resolution, and execution of external programs. Implemented core built-in commands and replicated real shell behavior across Linux and Windows environments.',
+  highlights: [
+    'Implemented PATH-based command resolution and a custom `which` utility',
+    'Cross-platform executable discovery using PATHEXT on Windows',
+    'Custom implementations of strtok, getenv, strdup, and string utilities',
+    'Executed external commands using fork/exec with proper process handling',
+    'Robust memory management with careful handling of tokenization and buffers'
+  ]
+}
+,
+  {
     image: '/api/placeholder/130/100',
     category: 'Backend',
     title: 'Video Streaming Backend System',

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import BookPage from './BookPage';
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 const ProjectsBook = ({ projects, onClose }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +14,7 @@ const ProjectsBook = ({ projects, onClose }) => {
   const [isFlipping, setIsFlipping] = useState(false);
   const [flipDirection, setFlipDirection] = useState(null);
   const totalPages = projects.length;
+  const isMobile = useIsMobile();
 
   const handleNext = () => {
     if (isFlipping) return;
@@ -96,20 +98,32 @@ const ProjectsBook = ({ projects, onClose }) => {
         >
           <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 shadow-inner z-20 transform -translate-x-1/2 book-divider" />
           <div className="book-spread grid grid-cols-2 relative" style={{ minHeight: '600px' }}>
-            <BookPage
-              project={projects[currentPage]}
-              side="left"
-              isFlipping={isFlipping}
-              flipDirection={flipDirection}
-              onPageClick={!isFlipping ? handlePrev : undefined}
-            />
-            <BookPage
-              project={projects[currentPage]}
-              side="right"
-              isFlipping={isFlipping}
-              flipDirection={flipDirection}
-              onPageClick={!isFlipping ? handleNext : undefined}
-            />
+            {isMobile ? (
+              <BookPage
+                project={projects[currentPage]}
+                isMobile={true}
+                isFlipping={isFlipping}
+                flipDirection={flipDirection}
+                onPageClick={!isFlipping ? handleNext : undefined}
+              />
+            ) : (
+              <>
+                <BookPage
+                  project={projects[currentPage]}
+                  side="left"
+                  isFlipping={isFlipping}
+                  flipDirection={flipDirection}
+                  onPageClick={!isFlipping ? handlePrev : undefined}
+                />
+                <BookPage
+                  project={projects[currentPage]}
+                  side="right"
+                  isFlipping={isFlipping}
+                  flipDirection={flipDirection}
+                  onPageClick={!isFlipping ? handleNext : undefined}
+                />
+              </>
+            )}
           </div>
         </div>
 

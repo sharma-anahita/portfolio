@@ -144,3 +144,39 @@ html, body {
     border-bottom: 1px solid rgb(243, 244, 246);
   }
 }
+
+/* Bottom sheet bounce animation */
+.bottom-sheet-bounce {
+  transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Bottom sheet physical animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.slide-up {
+  animation: slideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.slide-down {
+  animation: slideDown 500ms cubic-bezier(0.4, 0, 1, 1) forwards;
+}

@@ -10,10 +10,10 @@ const Skills = () => {
     return (
       <div
         ref={ref}
-        className={`transition-all duration-700 ease-out ${
+        className={`transition-all duration-[400ms] ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
-        style={{ transitionDelay: `${index * 50}ms` }}
+        style={{ transitionDelay: `${index * 30}ms` }}
       >
         {children}
       </div>

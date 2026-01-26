@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { useIsMobile } from './hooks/useIsMobile';
 import HamburgerButton from './components/navigation/HamburgerButton';
@@ -14,10 +14,35 @@ import Contact from './components/sections/Contact';
 function App() {
   const isMobile = useIsMobile();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('about');
 
   const handleNavClick = () => {
     setTimeout(() => setSidebarOpen(false), 150);
   };
+
+  useEffect(() => {
+    const sections = ['about', 'skills', 'education', 'projects', 'experience', 'contact'];
+    
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen w-full" style={{ scrollBehavior: 'smooth', background: '#fef5f3' }}>
@@ -29,7 +54,8 @@ function App() {
       {isMobile ? (
         <MobileNav 
           sidebarOpen={sidebarOpen} 
-          onNavClick={handleNavClick} 
+          onNavClick={handleNavClick}
+          activeSection={activeSection}
         />
       ) : null}
 
@@ -39,11 +65,10 @@ function App() {
 
       <div
         className={`
-          ${sidebarOpen && isMobile ? 'mt-40 md:mt-0' : 'mt-0'}
           ${sidebarOpen && !isMobile ? 'ml-64' : 'md:ml-16 md:peer-hover:ml-60'}
         `}
         style={{
-          transition: 'margin-top 300ms, margin-left 300ms 50ms'
+          transition: 'margin-left 300ms 50ms'
         }}
       >
         <Hero />
@@ -53,13 +78,6 @@ function App() {
         <Skills />
         <Contact />
       </div>
-
-      {sidebarOpen && isMobile && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-20"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
     </div>
   );
 }

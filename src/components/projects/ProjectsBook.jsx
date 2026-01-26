@@ -94,7 +94,7 @@ const ProjectsBook = ({ projects, onClose }) => {
           className={`book-wrapper relative w-full max-w-5xl mx-auto bg-white rounded-lg shadow-2xl overflow-hidden transition-all duration-500 ${isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0 pointer-events-none'}`}
           style={{ minHeight: '600px' }}
         >
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 shadow-inner z-20 transform -translate-x-1/2" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 shadow-inner z-20 transform -translate-x-1/2 book-divider" />
           <div className="book-spread grid grid-cols-2 relative" style={{ minHeight: '600px' }}>
             <BookPage
               project={projects[currentPage]}

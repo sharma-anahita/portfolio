@@ -124,15 +124,19 @@ html, body {
     0 10px 30px -5px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
   .book-spread {
     grid-template-columns: 1fr;
   }
   
+  .book-divider {
+    display: none;
+  }
+  
   .book-page.pr-10,
   .book-page.pl-10 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   
   .book-page:first-child {

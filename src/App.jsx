@@ -9,6 +9,7 @@ import Experience from './components/sections/Experience';
 import Education from './components/sections/Education';
 import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
+import CodingProfiles from './components/sections/CodingProfiles';
 import Contact from './components/sections/Contact';
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
   };
 
   useEffect(() => {
-    const sections = ['about', 'skills', 'education', 'projects', 'experience', 'contact'];
+    const sections = ['about', 'skills', 'education', 'projects', 'experience', 'coding-profiles', 'contact'];
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
@@ -76,6 +77,7 @@ function App() {
         <Education />
         <Projects />
         <Skills />
+        <CodingProfiles />
         <Contact />
       </div>
     </div>

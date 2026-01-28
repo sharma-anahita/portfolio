@@ -24,6 +24,7 @@ const MobileNav = ({ sidebarOpen, onNavClick, activeSection }) => {
     { href: '#education', label: 'Education' },
     { href: '#projects', label: 'Projects' },
     { href: '#experience', label: 'Experience' },
+    { href: '#coding-profiles', label: 'Coding Profiles' },
     { href: '#contact', label: 'Contact Me' }
   ];
 

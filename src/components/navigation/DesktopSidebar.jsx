@@ -7,11 +7,14 @@ const DesktopSidebar = ({ sidebarOpen }) => {
     { href: '#education', label: 'Education', icon: '🎓' },
     { href: '#projects', label: 'Projects', icon: '🚀' },
     { href: '#skills', label: 'Skills', icon: '🌸' },
+    { href: '#coding-profiles', label: 'Coding Profiles', icon: '💻' },
     { href: '#contact', label: 'Contact Me', icon: '✉️' }
   ];
 
   return (
-    <div className={`peer group fixed left-0 top-0 h-screen md:w-16 md:hover:w-60 w-64 bg-white shadow-xl z-10 overflow-hidden border-r border-gray-100 transition-all duration-300 md:translate-x-0 md:block ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} ${sidebarOpen ? 'block' : 'hidden'}`}>
+    <div className={`peer group fixed left-0 top-0 h-screen w-64 bg-white shadow-xl z-10 overflow-hidden border-r border-gray-100 transition-all duration-300 
+      ${sidebarOpen ? 'translate-x-0 block' : '-translate-x-full hidden'} 
+      md:translate-x-0 md:block md:w-16 md:hover:w-60`}>
       <div className="md:pt-12 pt-12 w-60">
         <nav className="md:space-y-1 space-y-3">
           {navItems.map((item) => (

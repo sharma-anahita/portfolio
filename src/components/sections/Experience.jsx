@@ -13,10 +13,17 @@ const Experience = () => {
             <span className="text-sm text-gray-500 self-start sm:self-auto">Dec 2025 – Present</span>
           </div>
           <div className="space-y-2">
-            <p className="text-sm text-gray-600">• Gaining hands-on exposure to offensive software exploitation techniques, including vulnerability analysis and exploit development fundamentals.</p>
-            <p className="text-sm text-gray-600">• Analyzing Windows internals, executable formats (PE), memory behavior, and low-level program execution for security assessment.</p>
-            <p className="text-sm text-gray-600">• Assisting in controlled lab-based security research under senior scientists, following ethical and organizational security guidelines.</p>
-          </div>
+            <p className="text-sm text-gray-600">
+  • Gained hands-on exposure to vulnerability analysis concepts and secure software assessment methodologies.
+</p>
+<p className="text-sm text-gray-600">
+  • Studied Windows internals including executable formats (PE), memory behavior, and low-level program execution for security evaluation.
+</p>
+<p className="text-sm text-gray-600">
+  • Supported controlled, lab-based cybersecurity research under senior scientists while following strict ethical and organizational security guidelines.
+</p>
+
+             </div>
         </div>
       </div>
     </section>

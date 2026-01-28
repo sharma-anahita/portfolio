@@ -22,7 +22,7 @@ function App() {
   };
 
   useEffect(() => {
-    const sections = ['about', 'skills', 'education', 'projects', 'experience', 'coding-profiles', 'contact'];
+    const sections = ['about', 'experience', 'education', 'projects', 'coding-profiles', 'skills', 'contact'];
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
@@ -76,8 +76,8 @@ function App() {
         <Experience />
         <Education />
         <Projects />
-        <Skills />
         <CodingProfiles />
+        <Skills />
         <Contact />
       </div>
     </div>

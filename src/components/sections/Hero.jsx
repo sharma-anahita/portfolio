@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
@@ -13,6 +13,69 @@ const Hero = () => {
   const EMAILJS_SERVICE_ID = 'service_lputadc';
   const EMAILJS_TEMPLATE_ID = 'template_89yg8np';
   const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+
+  // Typing animation component
+  const TypingAnimation = () => {
+    const [currentText, setCurrentText] = useState('');
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isTyping, setIsTyping] = useState(true);
+    const [showCursor, setShowCursor] = useState(true);
+
+    const texts = [
+      "Software Engineer building reliable backend systems and full-stack applications.",
+      "Cybersecurity researcher with hands-on experience in Windows internals and system-level security.",
+      "DSA enthusiast with 880+ algorithmic problems solved across major coding platforms.",
+      "Consistent problem solver with 330+ days of competitive programming and interview preparation."
+    ];
+
+    useEffect(() => {
+      const text = texts[currentIndex];
+      let timeout;
+
+      if (isTyping) {
+        // Typing phase
+        if (currentText.length < text.length) {
+          timeout = setTimeout(() => {
+            setCurrentText(text.slice(0, currentText.length + 1));
+          }, 50); // Typing speed
+        } else {
+          // Finished typing, pause before deleting
+          timeout = setTimeout(() => {
+            setIsTyping(false);
+          }, 2000); // Pause after typing
+        }
+      } else {
+        // Deleting phase
+        if (currentText.length > 0) {
+          timeout = setTimeout(() => {
+            setCurrentText(currentText.slice(0, -1));
+          }, 30); // Deleting speed
+        } else {
+          // Finished deleting, move to next text
+          setCurrentIndex((prev) => (prev + 1) % texts.length);
+          setIsTyping(true);
+        }
+      }
+
+      return () => clearTimeout(timeout);
+    }, [currentText, currentIndex, isTyping]);
+
+    // Blinking cursor effect
+    useEffect(() => {
+      const cursorInterval = setInterval(() => {
+        setShowCursor(prev => !prev);
+      }, 500); // Cursor blink speed
+
+      return () => clearInterval(cursorInterval);
+    }, []);
+
+    return (
+      <span className="inline-block">
+        {currentText}
+        <span className={`inline-block w-0.5 h-5 bg-pink-400 ml-1 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}></span>
+      </span>
+    );
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -89,7 +152,7 @@ const Hero = () => {
               </span>
             </h1>
             <p className="mb-6 text-gray-700 leading-relaxed text-sm sm:text-base">
-              A <span className="font-semibold text-pink-400">Computer Science</span> undergraduate at <span className="font-semibold">NIT Srinagar</span> who enjoys building <span className="font-semibold text-pink-400">reliable backend systems</span> and <span className="font-semibold text-pink-400">full-stack web applications</span>
+              <TypingAnimation />
             </p>
             <div className="mt-8">
               <p className="mb-3 text-sm font-semibold text-gray-700">Let's connect</p>

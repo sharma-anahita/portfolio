@@ -8,6 +8,7 @@ const DesktopSidebar = ({ sidebarOpen }) => {
     { href: '#projects', label: 'Projects', icon: '🚀' },
     { href: '#skills', label: 'Skills', icon: '🌸' },
     { href: '#coding-profiles', label: 'Coding Profiles', icon: '💻' },
+    { href: '/Anahita_Sharma_resume_SWE.pdf', label: 'Resume', icon: '📄', external: true },
     { href: '#contact', label: 'Contact Me', icon: '✉️' }
   ];
 
@@ -21,6 +22,7 @@ const DesktopSidebar = ({ sidebarOpen }) => {
             <a
               key={item.href}
               href={item.href}
+              {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               className="flex items-center md:gap-3 gap-3 md:px-0 px-4 md:py-3 py-3 md:pl-5 text-sm font-medium text-gray-700 hover:text-pink-400 hover:bg-pink-50 md:rounded-none rounded-xl transition-all duration-200 whitespace-nowrap md:justify-start"
             >
               <span className="text-lg md:min-w-[24px]">{item.icon}</span>

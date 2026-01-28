@@ -10,6 +10,7 @@ import Education from './components/sections/Education';
 import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
 import CodingProfiles from './components/sections/CodingProfiles';
+import Resume from './components/sections/Resume';
 import Contact from './components/sections/Contact';
 
 function App() {
@@ -77,6 +78,7 @@ function App() {
         <Education />
         <Projects />
         <CodingProfiles />
+        <Resume />
         <Skills />
         <Contact />
       </div>

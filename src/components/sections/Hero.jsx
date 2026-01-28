@@ -118,17 +118,27 @@ const Hero = () => {
                   rows={4}
                   className="w-full px-4 py-3 text-sm border-2 border-gray-200 rounded-md focus:outline-none focus:border-pink-300 resize-none"
                 />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`px-6 py-3 text-sm font-medium text-white rounded-md transition-colors ${
-                    isSubmitting
-                      ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-pink-400 hover:bg-pink-500"
-                  }`}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </button>
+                <div className="flex flex-wrap gap-3">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`px-6 py-3 text-sm font-medium text-white rounded-md transition-colors ${
+                      isSubmitting
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : "bg-pink-400 hover:bg-pink-500"
+                    }`}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </button>
+                  <a
+                    href="/Anahita_Sharma_resume_SWE.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 text-sm font-medium text-pink-500 bg-white border-2 border-pink-400 rounded-md hover:bg-pink-50 transition-colors"
+                  >
+                    Resume
+                  </a>
+                </div>
               </form>
               {submitStatus.message && (
                 <div

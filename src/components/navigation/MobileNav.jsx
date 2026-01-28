@@ -25,6 +25,7 @@ const MobileNav = ({ sidebarOpen, onNavClick, activeSection }) => {
     { href: '#projects', label: 'Projects' },
     { href: '#experience', label: 'Experience' },
     { href: '#coding-profiles', label: 'Coding Profiles' },
+    { href: '/Anahita_Sharma_resume_SWE.pdf', label: 'Resume', external: true },
     { href: '#contact', label: 'Contact Me' }
   ];
 
@@ -103,12 +104,13 @@ const MobileNav = ({ sidebarOpen, onNavClick, activeSection }) => {
         <nav className="px-6 py-4">
           <div className="flex flex-col gap-4">
             {navItems.map((item) => {
-              const isActive = activeSection === item.href.slice(1);
+              const isActive = !item.external && activeSection === item.href.slice(1);
               return (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={onNavClick}
+                  {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className={`py-3 text-lg font-semibold transition-colors ${
                     isActive ? 'text-pink-500' : 'text-gray-700 hover:text-pink-400'
                   }`}

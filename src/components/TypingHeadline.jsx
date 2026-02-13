@@ -9,8 +9,8 @@ const TypingHeadline = memo(() => {
   const texts = [
     "Software Engineer building reliable backend systems and full-stack applications.",
     "Cybersecurity researcher with hands-on experience in Windows internals and system-level security.",
-    "DSA enthusiast with 880+ algorithmic problems solved across major coding platforms.",
-    "Consistent problem solver with 330+ days of competitive programming and interview preparation."
+    "DSA enthusiast with 935+ algorithmic problems solved across major coding platforms.",
+    "Consistent problem solver with 350+ days of competitive programming and interview preparation."
   ];
 
   useEffect(() => {

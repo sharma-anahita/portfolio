@@ -73,13 +73,13 @@ const CodingProfiles = () => {
         </h2>
 
         <p className="mb-8 text-gray-600 max-w-2xl">
-          I have solved 880+ algorithmic problems across platforms with 330+ days of consistent practice.
+          I have solved 935+ algorithmic problems across platforms with 350+ days of consistent practice.
         </p>
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <StatCard number="884+" label="Problems Solved" index={0} />
-          <StatCard number="333+" label="Active Days" index={1} />
+          <StatCard number="935+" label="Problems Solved" index={0} />
+          <StatCard number="350+" label="Active Days" index={1} />
           <StatCard number="5+" label="Coding Platforms" index={2} />
         </div>
 

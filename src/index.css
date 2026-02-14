@@ -26,3 +26,31 @@
   }
 }
 
+/* Force ActivityHeatmaps grid to stack vertically (one card per row) */
+@layer components {
+  #activity-heatmaps .grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Ensure children stretch full width inside the card */
+  #activity-heatmaps .grid > * {
+    width: 100%;
+  }
+}
+
+/* Normalize heatmap square sizes so both GitHub (SVG) and LeetCode grids appear consistent */
+@layer utilities {
+  /* base (mobile) */
+  #activity-heatmaps .w-2.h-2 {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* sm and up */
+  @media (min-width: 640px) {
+    #activity-heatmaps .sm\:w-3.sm\:h-3 {
+      width: 18px !important;
+      height: 18px !important;
+    }
+  }
+}
+

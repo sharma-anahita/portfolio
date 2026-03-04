@@ -2,25 +2,27 @@ export const projects = [
   {
   image: '/api/placeholder/130/100',
   category: 'Systems',
-  title: 'Custom Unix-like Shell (C)',
+  title: 'Cross-Platform Custom Shell',
   technologies: [
     'C',
     'POSIX',
     'Process Management',
     'Environment Variables',
     'Custom Built-ins',
-    'Memory Management'
+    'Memory Management',
+    'Cross-Platform Compatibility',
+    'Win32 API'
   ],
   github: 'https://github.com/sharma-anahita/custom-shell',
   live: null,
-  description:
-    'Built a custom Unix-like shell from scratch in C with support for command parsing, PATH resolution, and execution of external programs. Implemented core built-in commands and replicated real shell behavior across Linux and Windows environments.',
+  description: ` 
+  Built a Unix-like command-line shell in C supporting command parsing, built-in commands, and external program execution.
+`,
   highlights: [
-    'Implemented PATH-based command resolution and a custom `which` utility',
-    'Cross-platform executable discovery using PATHEXT on Windows',
-    'Custom implementations of strtok, getenv, strdup, and string utilities',
-    'Executed external commands using fork/exec with proper process handling',
-    'Robust memory management with careful handling of tokenization and buffers'
+    'Implemented multi-stage process pipelines (|) and I/O redirection (>, <, >>, 2>) using low-level OS primitives such as pipe, dup2, and file descriptor manipulation.',
+    'Developed a tokenizer and parser to convert user input into structured command pipelines for execution.',
+    'Designed a cross-platform execution layer supporting POSIX systems (fork/execve) and Windows (CreateProcess,CreatePipe) for process creation and inter-process communication.',
+    'Implemented PATH resolution and environment variable handling for dynamic command discovery and execution.'
   ]
 }
 ,
@@ -44,17 +46,42 @@ export const projects = [
   {
     image: '/api/placeholder/130/100',
     category: 'Full-Stack',
-    title: 'Gamified Mood Tracker',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'MERN Stack'],
-    github: 'https://github.com/sharma-anahita/gamefied-mood-tracker-v2',
-    description: 'Developed an interactive mood tracking web app using modern frontend technologies with game-style UI/UX to make tracking moods engaging and intuitive. Built backend services and persistent storage to securely save user entries and manage session data, focusing on seamless user experience and reliability. Implemented data visualization and progress feedback features that help users monitor trends over time, enhancing user engagement and app usefulness.',
+    title: 'MindTrack — Mental Health Application',
+    technologies: [
+      'React',
+      'TypeScript',
+      'Vite',
+      'Zustand',
+      'Tailwind CSS',
+      'PostCSS',
+      'React Router',
+      'Recharts',
+      'Framer Motion',
+      'Lucide React',
+      'Express',
+      'Node.js',
+      'MongoDB',
+      'Mongoose',
+      'JWT',
+      'bcrypt',
+      'Axios',
+      'FastAPI',
+      'Uvicorn',
+      'Python',
+      'TextBlob',
+      'NumPy'
+    ],
+    github: null,
+    live: null,
+    description: `MindTrack is a production-ready full-stack mental health dashboard for mood logging, AI-powered insights, goal management, and gamified engagement. The app combines daily mood tracking with sentiment analysis, trend analytics, achievements, and progress visualization to encourage consistent mental wellness practices.`,
     highlights: [
-  'Emoji-based daily mood tracking with gamified UX',
-  'XP, level, and streak system to drive user engagement',
-  'Full authentication and backend integration for persistent data',
-  'Progress feedback and trend visualization for user insights',
-  'Scalable MERN stack architecture for future social features'
-]
+      'Daily mood logging with optional reflections and AI-powered sentiment analysis (FastAPI + TextBlob)',
+      'Trend analysis with volatility detection and risk scoring; endpoints: /analyze-reflection, /analyze-trend',
+      'Gamification system: achievements, XP, levels, streaks, and goal management',
+      'Interactive, responsive dashboard with Recharts and Framer Motion for real-time visualizations',
+      'Secure JWT-based authentication with bcrypt password hashing and protected APIs',
+      'Monorepo architecture separating frontend, backend, and ML service; production-ready build and start scripts'
+    ]
 
   },
   {

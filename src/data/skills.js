@@ -29,13 +29,13 @@ export const dataSkills = [
   { name: 'BeautifulSoup', icon: '🥣' }
 ];
 
-export const aiSkills = [
-  { name: 'LangGraph', icon: '🧠' },
-  { name: 'RAG (Retrieval-Augmented Generation)', icon: '🔍' },
-  { name: 'FAISS', icon: '📚' },
-  { name: 'LLMs', icon: '🤖' },
-  { name: 'Agent State Management', icon: '🧩' }
-];
+// export const aiSkills = [
+//   { name: 'LangGraph', icon: '🧠' },
+//   { name: 'RAG (Retrieval-Augmented Generation)', icon: '🔍' },
+//   { name: 'FAISS', icon: '📚' },
+//   { name: 'LLMs', icon: '🤖' },
+//   { name: 'Agent State Management', icon: '🧩' }
+// ];
 
 export const toolsSkills = [
   { name: 'Git & GitHub', icon: '🌱' },
@@ -73,12 +73,7 @@ export const skillsCategories = [
     title: '📊 Data & Analysis',
     skills: dataSkills
   },
-  {
-    id: 'ai',
-    title: '🧠 AI & Agent Systems',
-    skills: aiSkills
-  },
-  {
+    {
     id: 'tools',
     title: '🛠️ Tools & Platforms',
     skills: toolsSkills

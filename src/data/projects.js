@@ -135,21 +135,5 @@ export const projects = [
     ],
     
   },
-  {
-    
-    image: '/api/placeholder/130/100',
-    category: 'AI / Agent Systems',
-    title: 'AutoStream Conversational Agent',
-    technologies: ['Python', 'LangGraph', 'RAG', 'FAISS', 'LLMs'],
-    github: 'https://github.com/sharma-anahita/autostream-agent',
-    live: null,
-    description: 'Developed a stateful, multi-turn conversational AI agent using LangGraph and Retrieval-Augmented Generation (RAG). The agent supports intent detection, product queries, and controlled lead capture through deterministic workflows. Designed with explicit state management to ensure safe tool execution, prevent intent drift during multi-step interactions, and enable reliable real-world conversational behavior.',
-    highlights: [
-      'Explicit agent state for reliable multi-turn conversations',
-      'Deterministic control flow using LangGraph nodes and transitions',
-      'Retrieval-Augmented Generation (RAG) over a knowledge base using FAISS',
-      'Safe lead-capture workflow with intent freezing during high-intent states'
-    ]
-    
-  }
+ 
 ];

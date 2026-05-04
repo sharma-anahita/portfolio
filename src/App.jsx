@@ -13,6 +13,7 @@ import CodingProfiles from './components/sections/CodingProfiles';
 import ActivityHeatmaps from './components/sections/ActivityHeatmaps';
 import Resume from './components/sections/Resume';
 import Contact from './components/sections/Contact';
+import Poetry from './components/sections/Poetry';
 
 function App() {
   const isMobile = useIsMobile();
@@ -82,6 +83,7 @@ function App() {
         <ActivityHeatmaps />
         <Resume />
         <Skills />
+        <Poetry />
         <Contact />
       </div>
     </div>

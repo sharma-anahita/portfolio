@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { frontendSkills, backendSkills, dataSkills, aiSkills, toolsSkills, cyberSecuritySkills, skillsCategories } from '../../data/skills';
+import { frontendSkills, backendSkills, dataSkills, toolsSkills, cyberSecuritySkills, skillsCategories } from '../../data/skills';
 import useScrollReveal from '../../hooks/useScrollReveal';
 
 const Skills = () => {

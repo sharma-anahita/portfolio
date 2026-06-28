@@ -134,6 +134,72 @@
   --skill-card-radial: rgba(77, 163, 255, 0.25);
 }
 
+[data-theme='companion'] {
+  --color-bg-primary: #0E1222;
+  --color-bg-secondary: #171E35;
+  --color-card-bg: rgba(28, 36, 60, 0.75);
+  --color-card-border: rgba(139, 125, 255, 0.15);
+  --color-card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 0 12px rgba(139, 125, 255, 0.04);
+  --color-card-hover-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 0 20px rgba(201, 142, 255, 0.08);
+  
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #B8C2DC;
+  --color-text-muted: #6C7A9C;
+  
+  --color-accent-pink: #8B7DFF; /* Soft periwinkle */
+  --color-accent-pink-hover: #C98EFF; /* Lavender */
+  --color-accent-pink-bg: rgba(139, 125, 255, 0.1);
+  
+  --color-btn-gradient-start: #8B7DFF;
+  --color-btn-gradient-end: #C98EFF;
+  --color-btn-gradient-start-hover: #9D90FF;
+  --color-btn-gradient-end-hover: #D3A2FF;
+  
+  --color-border-input: rgba(139, 125, 255, 0.15);
+  --color-border-input-focus: #8B7DFF;
+  
+  /* Sidebar */
+  --color-sidebar-bg: #171E35;
+  --color-sidebar-border: rgba(139, 125, 255, 0.15);
+  --color-sidebar-hover-bg: rgba(139, 125, 255, 0.08);
+  --color-sidebar-hover-text: #8B7DFF;
+  
+  /* Book Cover */
+  --color-book-cover-gradient-start: #171E35;
+  --color-book-cover-gradient-mid: #1C243C;
+  --color-book-cover-gradient-end: #232D4C;
+  
+  /* Heatmap (Periwinkle and Lavender) */
+  --color-github-0: rgba(139, 125, 255, 0.06);
+  --color-github-1: rgba(139, 125, 255, 0.2);
+  --color-github-2: rgba(139, 125, 255, 0.45);
+  --color-github-3: #8B7DFF;
+  --color-github-4: #C98EFF;
+  
+  --color-leetcode-0: rgba(139, 125, 255, 0.06);
+  --color-leetcode-1: rgba(123, 203, 255, 0.2);
+  --color-leetcode-2: rgba(123, 203, 255, 0.45);
+  --color-leetcode-3: #7BCBFF;
+  --color-leetcode-4: #ffffff;
+  
+  /* Cursor */
+  --color-cursor: #F5A8D8; /* pink highlight */
+  
+  /* Success & Danger */
+  --color-success-bg: rgba(123, 203, 255, 0.08);
+  --color-success-text: #7BCBFF;
+  --color-success-border: rgba(123, 203, 255, 0.15);
+  
+  --color-danger-bg: rgba(245, 168, 216, 0.08);
+  --color-danger-text: #F5A8D8;
+  --color-danger-border: rgba(245, 168, 216, 0.15);
+  
+  --backdrop-blur-card: blur(12px);
+  --skill-glow: 0 0 16px 4px rgba(139, 125, 255, 0.25), 0 2px 8px rgba(0, 0, 0, 0.2);
+  --skill-border-hover: #8B7DFF;
+  --skill-card-radial: rgba(139, 125, 255, 0.25);
+}
+
 @layer base {
   body {
     font-family: 'Inter', system-ui, sans-serif;

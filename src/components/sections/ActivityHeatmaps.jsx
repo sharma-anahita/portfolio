@@ -478,7 +478,7 @@ const ActivityHeatmaps = ({ theme }) => {
               )}
               {!ghImgError ? (
                 <img
-                  src={`https://ghchart.rshah.org/${theme === 'agent' ? '4da3ff' : 'e879a0'}/${GITHUB_USERNAME}`}
+                  src={`https://ghchart.rshah.org/${theme === 'agent' ? '4da3ff' : theme === 'companion' ? '8b7dff' : 'e879a0'}/${GITHUB_USERNAME}`}
                   alt={`GitHub contribution chart for ${GITHUB_USERNAME}`}
                   className={`w-full rounded transition-all duration-500 scale-[0.92] origin-top-left ${ghImgLoaded ? 'opacity-100' : 'opacity-0 absolute'}`}
                   onLoad={() => setGhImgLoaded(true)}

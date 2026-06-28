@@ -10,7 +10,7 @@ const TypingHeadline = memo(() => {
     "Software Engineer building reliable backend systems and full-stack applications.",
     "Cybersecurity researcher with hands-on experience in Windows internals and system-level security.",
     "DSA enthusiast with 1000+ algorithmic problems solved across major coding platforms.",
-    "Consistent problem solver with 350+ days of competitive programming and interview preparation."
+    "Consistent problem solver with 350+ days of competitive programming."
   ];
 
   useEffect(() => {

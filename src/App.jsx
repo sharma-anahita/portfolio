@@ -28,8 +28,17 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  const toggleTheme = () => {
-    const nextTheme = theme === 'blossom' ? 'agent' : 'blossom';
+  const toggleTheme = (targetTheme) => {
+    let nextTheme = targetTheme;
+    // If targetTheme is an event or not a string, cycle through the 3 themes
+    if (typeof nextTheme !== 'string') {
+      if (theme === 'blossom') nextTheme = 'agent';
+      else if (theme === 'agent') nextTheme = 'companion';
+      else nextTheme = 'blossom';
+    }
+
+    if (theme === nextTheme) return;
+
     document.documentElement.classList.add('theme-transitioning');
     setTheme(nextTheme);
     localStorage.setItem('portfolio-theme', nextTheme);

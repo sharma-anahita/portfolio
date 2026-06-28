@@ -4,6 +4,7 @@ import { useIsMobile } from './hooks/useIsMobile';
 import HamburgerButton from './components/navigation/HamburgerButton';
 import MobileNav from './components/navigation/MobileNav';
 import DesktopSidebar from './components/navigation/DesktopSidebar';
+import ThemeToggle from './components/navigation/ThemeToggle';
 import Hero from './components/sections/Hero';
 import Experience from './components/sections/Experience';
 import Education from './components/sections/Education';
@@ -19,6 +20,23 @@ function App() {
   const isMobile = useIsMobile();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('portfolio-theme') || 'blossom';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'blossom' ? 'agent' : 'blossom';
+    document.documentElement.classList.add('theme-transitioning');
+    setTheme(nextTheme);
+    localStorage.setItem('portfolio-theme', nextTheme);
+    setTimeout(() => {
+      document.documentElement.classList.remove('theme-transitioning');
+    }, 350);
+  };
 
   const handleNavClick = () => {
     setTimeout(() => setSidebarOpen(false), 150);
@@ -49,7 +67,11 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full" style={{ scrollBehavior: 'smooth', background: '#fef5f3' }}>
+    <div className="min-h-screen w-full text-themeText" style={{ scrollBehavior: 'smooth' }}>
+      <div className="fixed top-4 right-4 z-40">
+        <ThemeToggle theme={theme} onToggle={toggleTheme} />
+      </div>
+
       <HamburgerButton 
         sidebarOpen={sidebarOpen} 
         onClick={() => setSidebarOpen(!sidebarOpen)} 
@@ -80,7 +102,7 @@ function App() {
         <Education />
         <Projects />
         <CodingProfiles />
-        <ActivityHeatmaps />
+        <ActivityHeatmaps theme={theme} />
         <Resume />
         <Skills />
         <Poetry />

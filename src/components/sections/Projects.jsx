@@ -16,7 +16,7 @@ const Projects = () => {
               onClick={() => setIsBookOpen(true)}
               className="group relative"
             >
-              <div className="book-cover w-64 h-80 bg-gradient-to-br from-pink-300 via-purple-300 to-orange-300 rounded-r-xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-pink-200/50 relative overflow-hidden">
+              <div className="book-cover w-64 h-80 bg-gradient-to-br from-[var(--color-book-cover-gradient-start)] via-[var(--color-book-cover-gradient-mid)] to-[var(--color-book-cover-gradient-end)] rounded-r-xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-themeAccent/20 relative border border-themeBorder overflow-hidden">
                 <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
                 <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-black/20 to-transparent" />
                 <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 text-center">

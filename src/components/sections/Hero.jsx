@@ -80,7 +80,7 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="flex-1 text-center lg:text-left">
             <h1 className="mb-4 sm:mb-6 text-3xl sm:text-4xl font-normal">
-              Hey, I'm <span className="font-bold text-pink-400">Anahita Sharma</span>{' '}
+              Hey, I'm <span className="font-bold text-themeAccent">Anahita Sharma</span>{' '}
               <span className="inline-block align-baseline w-10 h-10 scale-125 -translate-y-1">
                 <DotLottieReact
                   src="https://lottie.host/4e45f9c6-1c0e-4018-aa4d-2bc0c0a5067f/12N6aYiYjl.lottie"
@@ -89,18 +89,18 @@ const Hero = () => {
                 />
               </span>
             </h1>
-            <p className="mb-6 text-gray-700 leading-relaxed text-sm sm:text-base">
+            <p className="mb-6 text-themeTextSec leading-relaxed text-sm sm:text-base">
               <TypingHeadline />
             </p>
             <div className="mt-8">
-              <p className="mb-3 text-sm font-semibold text-gray-700">Let's connect</p>
+              <p className="mb-3 text-sm font-semibold text-themeTextSec">Let's connect</p>
               <form onSubmit={handleSubmit} ref={formRef} className="space-y-3">
                 <input
                   type="text"
                   placeholder="Your name (optional)"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 text-sm border-2 border-gray-200 rounded-md focus:outline-none focus:border-pink-300"
+                  className="w-full px-4 py-3 text-sm border bg-themeCard border-themeInput rounded-md focus:outline-none focus:border-themeInputFocus focus:ring-1 focus:ring-themeInputFocus text-themeText placeholder-themeTextMuted/70"
                 />
                 <input
                   type="email"
@@ -108,7 +108,7 @@ const Hero = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-4 py-3 text-sm border-2 border-gray-200 rounded-md focus:outline-none focus:border-pink-300"
+                  className="w-full px-4 py-3 text-sm border bg-themeCard border-themeInput rounded-md focus:outline-none focus:border-themeInputFocus focus:ring-1 focus:ring-themeInputFocus text-themeText placeholder-themeTextMuted/70"
                 />
                 <textarea
                   placeholder="Your message *"
@@ -116,16 +116,16 @@ const Hero = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 text-sm border-2 border-gray-200 rounded-md focus:outline-none focus:border-pink-300 resize-none"
+                  className="w-full px-4 py-3 text-sm border bg-themeCard border-themeInput rounded-md focus:outline-none focus:border-themeInputFocus focus:ring-1 focus:ring-themeInputFocus text-themeText placeholder-themeTextMuted/70 resize-none"
                 />
                 <div className="flex flex-wrap gap-3">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`px-6 py-3 text-sm font-medium text-white rounded-md transition-colors ${
+                    className={`px-6 py-3 text-sm font-medium text-white rounded-md transition-all shine-sweep-btn duration-300 hover:scale-[1.02] hover:-translate-y-0.5 active:scale-95 shadow-md hover:shadow-themeAccent/20 ${
                       isSubmitting
                         ? "bg-gray-400 cursor-not-allowed"
-                        : "bg-pink-400 hover:bg-pink-500"
+                        : "bg-gradient-to-r from-themeBtnGradStart to-themeBtnGradEnd hover:from-themeBtnGradStartHover hover:to-themeBtnGradEndHover"
                     }`}
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
@@ -134,7 +134,7 @@ const Hero = () => {
                     href="/Anahita_Sharma_resume_SWE.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 text-sm font-medium text-pink-500 bg-white border-2 border-pink-400 rounded-md hover:bg-pink-50 transition-colors"
+                    className="px-6 py-3 text-sm font-medium text-themeAccent bg-themeCard border border-themeAccent rounded-md hover:bg-themeAccentBg hover:text-themeAccentHover hover:scale-[1.02] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 shadow-sm"
                   >
                     Resume
                   </a>
@@ -142,10 +142,10 @@ const Hero = () => {
               </form>
               {submitStatus.message && (
                 <div
-                  className={`mt-4 p-3 rounded-md text-sm ${
+                  className={`mt-4 p-3 rounded-md text-sm border ${
                     submitStatus.type === "success"
-                      ? "bg-green-100 text-green-700 border border-green-200"
-                      : "bg-red-100 text-red-700 border border-red-200"
+                      ? "bg-theme-success text-theme-success border-theme-success"
+                      : "bg-theme-danger text-theme-danger border-theme-danger"
                   }`}
                 >
                   {submitStatus.message}
@@ -154,11 +154,11 @@ const Hero = () => {
             </div>
           </div>
           <div className="flex-shrink-0">
-            <div className="rounded-lg overflow-hidden bg-gradient-to-br from-pink-200 to-orange-300 aspect-square w-48 sm:w-64 lg:w-80 flex items-center justify-center">
+            <div className="rounded-lg overflow-hidden bg-gradient-to-br from-themeAccent to-themeBtnGradEnd aspect-square w-48 sm:w-64 lg:w-80 flex items-center justify-center p-1 shadow-lg">
               <img
                 src="/hi.jpeg"
                 alt="Hero"
-                className="object-cover w-full h-full rounded-lg shadow-lg border-4 border-white"
+                className="object-cover w-full h-full rounded-lg border-2 border-themeCard/30 shadow-inner"
               />
             </div>
           </div>

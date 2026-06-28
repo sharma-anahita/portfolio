@@ -58,7 +58,7 @@ const Skills = () => {
 
     return (
       <div 
-        className="skill-card flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm transition-all cursor-pointer md:hover:shadow-lg md:hover:-translate-y-1 md:hover:scale-105 relative overflow-hidden"
+        className="skill-card flex flex-col items-center justify-center p-4 bg-themeCard border border-themeBorder rounded-lg shadow-themeCard transition-all cursor-pointer md:hover:shadow-themeCardHover md:hover:-translate-y-1 md:hover:scale-105 relative overflow-hidden"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={handleMouseLeave}
@@ -73,7 +73,7 @@ const Skills = () => {
           <div
             className="absolute inset-0 pointer-events-none rounded-lg opacity-0 md:opacity-20"
             style={{
-              background: `radial-gradient(circle 150px at var(--x) var(--y), rgba(244, 114, 182, 0.4), transparent 80%)`,
+              background: `radial-gradient(circle 150px at var(--x) var(--y), var(--skill-card-radial), transparent 80%)`,
             }}
           />
         )}
@@ -86,7 +86,7 @@ const Skills = () => {
         >
           {skill.icon}
         </span>
-        <p className="text-sm font-semibold text-gray-800 text-center relative z-10">{skill.name}</p>
+        <p className="text-sm font-semibold text-themeText text-center relative z-10">{skill.name}</p>
       </div>
     );
   };
@@ -103,13 +103,13 @@ const Skills = () => {
         }
       `}</style>
       <div className="max-w-6xl mx-auto">
-        <h2 className="mb-8 text-base sm:text-lg font-semibold text-gray-800">
+        <h2 className="mb-8 text-base sm:text-lg font-semibold text-themeText">
           🌸 Skills
         </h2>
         
         {skillsCategories.map((category, categoryIndex) => (
           <div key={category.id} className="mb-8">
-            <h3 className="mb-4 text-md font-semibold text-gray-700">{category.title}</h3>
+            <h3 className="mb-4 text-md font-semibold text-themeTextSec">{category.title}</h3>
             <div className="skills-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {category.skills.map((skill, skillIndex) => (
                 <AnimatedCard key={`${category.id}-${skillIndex}`} index={categoryIndex * 10 + skillIndex}>

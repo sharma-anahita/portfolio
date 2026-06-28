@@ -83,7 +83,7 @@ const MobileNav = ({ sidebarOpen, onNavClick, activeSection }) => {
       {/* Bottom Sheet */}
       <div
         ref={sheetRef}
-        className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl shadow-2xl ${isClosing ? 'slide-down' : 'slide-up'}`}
+        className={`absolute bottom-0 left-0 right-0 bg-themeCard border-t border-themeBorder rounded-t-3xl shadow-2xl ${isClosing ? 'slide-down' : 'slide-up'}`}
         style={{ height: '60vh' }}
       >
         {/* Handle */}
@@ -94,10 +94,10 @@ const MobileNav = ({ sidebarOpen, onNavClick, activeSection }) => {
         {/* Close Button */}
         <button
           onClick={onNavClick}
-          className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors"
+          className="absolute top-4 right-4 p-2 rounded-full hover:bg-themeAccentBg transition-colors"
           aria-label="Close menu"
         >
-          <X className="w-6 h-6 text-gray-600" />
+          <X className="w-6 h-6 text-themeTextSec" />
         </button>
 
         {/* Navigation */}
@@ -112,7 +112,7 @@ const MobileNav = ({ sidebarOpen, onNavClick, activeSection }) => {
                   onClick={onNavClick}
                   {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className={`py-3 text-lg font-semibold transition-colors ${
-                    isActive ? 'text-pink-500' : 'text-gray-700 hover:text-pink-400'
+                    isActive ? 'text-themeAccent' : 'text-themeTextSec hover:text-themeAccent'
                   }`}
                 >
                   {item.label}

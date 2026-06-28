@@ -80,10 +80,10 @@ const ProjectsBook = ({ projects, onClose }) => {
           setIsOpen(false);
           setTimeout(onClose, 400);
         }}
-        className="absolute -top-12 right-0 p-2 rounded-full bg-white shadow-lg hover:shadow-xl transition-all z-50 hover:bg-pink-50"
+        className="absolute -top-12 right-0 p-2 rounded-full bg-themeCard border border-themeBorder shadow-lg hover:shadow-xl transition-all z-50 hover:bg-themeAccentBg hover:text-themeAccent text-themeText"
         aria-label="Close book"
       >
-        <X className="w-5 h-5 text-gray-700" />
+        <X className="w-5 h-5" />
       </button>
 
       <div 
@@ -93,10 +93,10 @@ const ProjectsBook = ({ projects, onClose }) => {
         onTouchEnd={onTouchEnd}
       >
         <div
-          className={`book-wrapper relative w-full max-w-5xl mx-auto bg-white rounded-lg shadow-2xl overflow-hidden transition-all duration-500 ${isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0 pointer-events-none'}`}
+          className={`book-wrapper relative w-full max-w-5xl mx-auto bg-themeCard border border-themeBorder backdrop-blur-themeCard rounded-lg shadow-themeCard transition-all duration-500 ${isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0 pointer-events-none'}`}
           style={{ minHeight: '600px' }}
         >
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 shadow-inner z-20 transform -translate-x-1/2 book-divider" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-r from-themeBorder via-themeBgSec to-themeBorder shadow-inner z-20 transform -translate-x-1/2 book-divider" />
           <div className="book-spread grid grid-cols-2 relative" style={{ minHeight: '600px' }}>
             {isMobile ? (
               <BookPage
@@ -131,10 +131,10 @@ const ProjectsBook = ({ projects, onClose }) => {
           <button
             onClick={handlePrev}
             disabled={currentPage === 0 || isFlipping}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${
               currentPage === 0 || isFlipping
-                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                : 'bg-white text-gray-700 hover:bg-pink-50 hover:text-pink-500 shadow-md hover:shadow-lg'
+                ? 'bg-themeBgSec text-themeTextMuted/40 border-themeBorder cursor-not-allowed shadow-none'
+                : 'bg-themeCard text-themeTextSec border-themeBorder hover:bg-themeAccentBg hover:text-themeAccent shadow-md hover:shadow-lg'
             }`}
             aria-label="Previous page"
           >
@@ -143,7 +143,7 @@ const ProjectsBook = ({ projects, onClose }) => {
           </button>
 
           <div className="flex items-center gap-2">
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-themeTextMuted">
               {currentPage + 1} / {totalPages}
             </span>
           </div>
@@ -151,10 +151,10 @@ const ProjectsBook = ({ projects, onClose }) => {
           <button
             onClick={handleNext}
             disabled={currentPage === totalPages - 1 || isFlipping}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${
               currentPage === totalPages - 1 || isFlipping
-                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                : 'bg-white text-gray-700 hover:bg-pink-50 hover:text-pink-500 shadow-md hover:shadow-lg'
+                ? 'bg-themeBgSec text-themeTextMuted/40 border-themeBorder cursor-not-allowed shadow-none'
+                : 'bg-themeCard text-themeTextSec border-themeBorder hover:bg-themeAccentBg hover:text-themeAccent shadow-md hover:shadow-lg'
             }`}
             aria-label="Next page"
           >

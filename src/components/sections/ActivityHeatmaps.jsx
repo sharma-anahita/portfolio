@@ -46,19 +46,19 @@ function toWeekColumns(days) {
 
 /** Return colour class for a count, themed to portfolio palette */
 const githubColor = (count) => {
-  if (!count) return 'bg-gray-100';
-  if (count >= 10) return 'bg-pink-600';
-  if (count >= 6) return 'bg-pink-500';
-  if (count >= 3) return 'bg-pink-400';
-  return 'bg-pink-200';
+  if (!count) return 'bg-github-0';
+  if (count >= 10) return 'bg-github-4';
+  if (count >= 6) return 'bg-github-3';
+  if (count >= 3) return 'bg-github-2';
+  return 'bg-github-1';
 };
 
 const leetcodeColor = (count) => {
-  if (!count) return 'bg-gray-100';
-  if (count >= 6) return 'bg-purple-600';
-  if (count >= 4) return 'bg-purple-500';
-  if (count >= 2) return 'bg-purple-400';
-  return 'bg-purple-200';
+  if (!count) return 'bg-leetcode-0';
+  if (count >= 6) return 'bg-leetcode-4';
+  if (count >= 4) return 'bg-leetcode-3';
+  if (count >= 2) return 'bg-leetcode-2';
+  return 'bg-leetcode-1';
 };
 
 const MONTH_LABELS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -270,7 +270,7 @@ const Legend = ({ colorFn, labels }) => (
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
-const ActivityHeatmaps = () => {
+const ActivityHeatmaps = ({ theme }) => {
   // Stable ref — rebuilding every render is unnecessary
   const dateRange = useRef(buildDateRange()).current;
 
@@ -299,9 +299,6 @@ const ActivityHeatmaps = () => {
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
-
-  // ── GitHub: no fetch needed — ghchart.rshah.org SVG is the primary display ──
-  // (removed fragile github-contributions-api.vercel.app dependency)
 
   // ── LeetCode fetch — with 9s timeout + clean error handling ──
   useEffect(() => {
@@ -363,17 +360,17 @@ const ActivityHeatmaps = () => {
     >
       <div className={`max-w-6xl mx-auto transition-all duration-700 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         {/* Section heading */}
-        <h2 className="mb-2 text-base sm:text-lg font-semibold text-gray-800">
+        <h2 className="mb-2 text-base sm:text-lg font-semibold text-themeText">
           🌱 Contribution Activity
         </h2>
-        <p className="mb-8 text-sm text-gray-500">
+        <p className="mb-8 text-sm text-themeTextMuted">
           A year of commits and solutions — consistency captured in green and pink squares.
         </p>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
 
           {/* ── LeetCode Card (first) ── */}
-          <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-50 p-6 overflow-x-auto">
+          <div className="bg-themeCard rounded-2xl shadow-themeCard hover:shadow-themeCardHover transition-shadow border border-themeBorder p-6 overflow-x-auto animate-fade-in">
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
@@ -385,12 +382,12 @@ const ActivityHeatmaps = () => {
                   <path fillRule="evenodd" clipRule="evenodd" d="M33.5 39C22.1782 39 13 48.1782 13 59.5C13 70.8218 22.1782 80 33.5 80H61.5C72.8218 80 82 70.8218 82 59.5C82 48.1782 72.8218 39 61.5 39H33.5ZM47.4999 49.4584C43.0274 49.4584 38.8579 51.2239 35.7805 54.3013C35.7805 54.3013 33.2217 56.8601 33.2217 60.5C33.2217 64.1399 35.7805 66.6987 35.7805 66.6987C38.8579 69.7761 43.0274 71.5416 47.4999 71.5416C51.9724 71.5416 56.1419 69.7761 59.2193 66.6987L59.2194 66.6987C62.2967 63.6213 64.0622 59.4518 64.0622 54.9793C64.0622 50.5068 62.2967 46.3373 59.2193 43.26C56.1419 40.1826 51.9724 38.4171 47.4999 38.4171C43.0274 38.4171 38.8579 40.1826 35.7805 43.26L28.8281 50.2124C26.4379 52.6026 25.0933 55.8491 25.0933 59.2291V61.7709C25.0933 65.1509 26.4379 68.3974 28.8281 70.7876L35.7805 77.74C38.8579 80.8174 43.0274 82.5829 47.4999 82.5829C51.9724 82.5829 56.1419 80.8174 59.2193 77.74C62.2967 74.6626 64.0622 70.4931 64.0622 66.0206V47.5794C64.0622 43.1069 62.2967 38.9374 59.2193 35.86C56.1419 32.7826 51.9724 31.0171 47.4999 31.0171C43.0274 31.0171 38.8579 32.7826 35.7805 35.86" fill="white"/>
                 </svg>
                 <div>
-                  <h3 className="text-sm font-bold text-gray-800">LeetCode</h3>
+                  <h3 className="text-sm font-bold text-themeText">LeetCode</h3>
                   <a
                     href={`https://leetcode.com/u/${LEETCODE_USERNAME}/`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-purple-400 hover:underline"
+                    className="text-xs text-themeAccent hover:underline"
                   >
                     @{LEETCODE_USERNAME}
                   </a>
@@ -400,22 +397,22 @@ const ActivityHeatmaps = () => {
               {!lcLoading && !lcError && (
                 <div className="flex gap-1.5 flex-wrap justify-end">
                   {lcStats.activeDays > 0 && (
-                    <span className="px-2 py-0.5 text-[11px] font-semibold bg-purple-50 text-purple-600 rounded-full">
+                    <span className="px-2 py-0.5 text-[11px] font-semibold bg-themeAccentBg text-themeAccent rounded-full border border-themeAccent/10">
                       {lcStats.activeDays} days
                     </span>
                   )}
                   {lcStats.currentStreak > 0 && (
-                    <span className="px-2 py-0.5 text-[11px] font-semibold bg-orange-50 text-orange-500 rounded-full">
+                    <span className="px-2 py-0.5 text-[11px] font-semibold bg-orange-500/10 text-orange-400 rounded-full border border-orange-500/20">
                       🔥 {lcStats.currentStreak}d streak
                     </span>
                   )}
                   {lcStats.longestStreak > 0 && (
-                    <span className="px-2 py-0.5 text-[11px] font-semibold bg-yellow-50 text-yellow-600 rounded-full">
+                    <span className="px-2 py-0.5 text-[11px] font-semibold bg-yellow-500/10 text-yellow-500 rounded-full border border-yellow-500/20">
                       ⭐ {lcStats.longestStreak}d best
                     </span>
                   )}
                   {lcStats.lastActive && (
-                    <span className="px-2 py-0.5 text-[11px] font-semibold bg-gray-50 text-gray-500 rounded-full">
+                    <span className="px-2 py-0.5 text-[11px] font-semibold bg-themeBorder/40 text-themeTextMuted rounded-full">
                       Last: {lcStats.lastActive}
                     </span>
                   )}
@@ -439,32 +436,32 @@ const ActivityHeatmaps = () => {
           </div>
 
           {/* ── GitHub Card (second) ── */}
-          <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-50 p-6 overflow-x-auto">
+          <div className="bg-themeCard rounded-2xl shadow-themeCard hover:shadow-themeCardHover transition-shadow border border-themeBorder p-6 overflow-x-auto animate-fade-in">
             {/* Header */}
             <div className="flex items-start justify-between gap-3 mb-4">
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-gray-800 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="w-5 h-5 text-themeText flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.230.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.230 3.297-1.230.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
                 <div>
-                  <h3 className="text-sm font-bold text-gray-800">GitHub</h3>
+                  <h3 className="text-sm font-bold text-themeText">GitHub</h3>
                   <a
                     href={`https://github.com/${GITHUB_USERNAME}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-pink-400 hover:underline"
+                    className="text-xs text-themeAccent hover:underline"
                   >
                     @{GITHUB_USERNAME}
                   </a>
                 </div>
               </div>
               {/* Static pill — no API dependency */}
-              <span className="px-2.5 py-1 text-xs font-semibold bg-pink-50 text-pink-600 rounded-full flex-shrink-0">
+              <span className="px-2.5 py-1 text-xs font-semibold bg-themeAccentBg text-themeAccent rounded-full border border-themeAccent/10 flex-shrink-0">
                 Live chart
               </span>
             </div>
 
-            {/* GitHub SVG embed — primary display; falls back gracefully */}
+            {/* GitHub SVG embed ── */}
             <div className="w-full">
               {!ghImgLoaded && !ghImgError && (
                 <div className="flex items-center justify-center h-24">
@@ -472,7 +469,7 @@ const ActivityHeatmaps = () => {
                     {[...Array(8)].map((_, i) => (
                       <div
                         key={i}
-                        className="w-3 h-3 rounded-sm bg-gray-200 animate-pulse"
+                        className="w-3 h-3 rounded-sm bg-themeBorder/40 animate-pulse"
                         style={{ animationDelay: `${i * 70}ms` }}
                       />
                     ))}
@@ -481,20 +478,20 @@ const ActivityHeatmaps = () => {
               )}
               {!ghImgError ? (
                 <img
-                  src={`https://ghchart.rshah.org/e879a0/${GITHUB_USERNAME}`}
+                  src={`https://ghchart.rshah.org/${theme === 'agent' ? '4da3ff' : 'e879a0'}/${GITHUB_USERNAME}`}
                   alt={`GitHub contribution chart for ${GITHUB_USERNAME}`}
-                  className={`w-full rounded transition-opacity duration-500 scale-[0.92] origin-top-left ${ghImgLoaded ? 'opacity-100' : 'opacity-0 absolute'}`}
+                  className={`w-full rounded transition-all duration-500 scale-[0.92] origin-top-left ${ghImgLoaded ? 'opacity-100' : 'opacity-0 absolute'}`}
                   onLoad={() => setGhImgLoaded(true)}
                   onError={() => { setGhImgLoaded(true); setGhImgError(true); }}
                 />
               ) : (
-                <div className="flex flex-col items-center justify-center h-24 gap-2 text-xs text-gray-400 italic text-center">
+                <div className="flex flex-col items-center justify-center h-24 gap-2 text-xs text-themeTextMuted italic text-center">
                   <span>Chart temporarily unavailable.</span>
                   <a
                     href={`https://github.com/${GITHUB_USERNAME}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-pink-400 hover:underline not-italic font-medium"
+                    className="text-themeAccent hover:underline not-italic font-medium"
                   >
                     View on GitHub →
                   </a>
@@ -502,7 +499,7 @@ const ActivityHeatmaps = () => {
               )}
             </div>
             {ghImgLoaded && !ghImgError && (
-              <p className="mt-1.5 text-[10px] text-gray-400 text-right">
+              <p className="mt-1.5 text-[10px] text-themeTextMuted text-right">
                 via ghchart.rshah.org
               </p>
             )}
@@ -511,7 +508,7 @@ const ActivityHeatmaps = () => {
         </div>
 
         {/* Bottom note */}
-        <p className="mt-4 text-xs text-center text-gray-400 italic">
+        <p className="mt-4 text-xs text-center text-themeTextMuted italic">
           GitHub chart via ghchart.rshah.org · LeetCode data via public API · hover or focus any square for details
         </p>
       </div>

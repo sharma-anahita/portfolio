@@ -58,7 +58,7 @@ const TypingHeadline = memo(() => {
     <span className="inline-block">
       {currentText}
       <span 
-        className={`inline-block w-0.5 h-5 bg-pink-400 ml-1 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}
+        className={`inline-block w-0.5 h-5 bg-themeCursor ml-1 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}
       />
     </span>
   );

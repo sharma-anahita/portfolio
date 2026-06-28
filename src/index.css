@@ -2,6 +2,138 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-bg-primary: #fef5f3;
+  --color-bg-secondary: #fef5f3;
+  --color-card-bg: #ffffff;
+  --color-card-border: #f3f4f6;
+  --color-card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  --color-card-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #374151;
+  --color-text-muted: #6b7280;
+  
+  --color-accent-pink: #f472b6;
+  --color-accent-pink-hover: #ec4899;
+  --color-accent-pink-bg: #fdf2f8;
+  
+  --color-btn-gradient-start: #f472b6;
+  --color-btn-gradient-end: #a855f7;
+  --color-btn-gradient-start-hover: #ec4899;
+  --color-btn-gradient-end-hover: #9333ea;
+  
+  --color-border-input: #e5e7eb;
+  --color-border-input-focus: #fbcfe8;
+  
+  /* Sidebar */
+  --color-sidebar-bg: #ffffff;
+  --color-sidebar-border: #f3f4f6;
+  --color-sidebar-hover-bg: #fdf2f8;
+  --color-sidebar-hover-text: #f472b6;
+  
+  /* Book Cover */
+  --color-book-cover-gradient-start: #fbcfe8;
+  --color-book-cover-gradient-mid: #e9d5ff;
+  --color-book-cover-gradient-end: #fed7aa;
+  
+  /* Heatmap */
+  --color-github-0: #f3f4f6;
+  --color-github-1: #fbcfe8;
+  --color-github-2: #f472b6;
+  --color-github-3: #ec4899;
+  --color-github-4: #db2777;
+  
+  --color-leetcode-0: #f3f4f6;
+  --color-leetcode-1: #e9d5ff;
+  --color-leetcode-2: #c084fc;
+  --color-leetcode-3: #a855f7;
+  --color-leetcode-4: #9333ea;
+  
+  /* Cursor */
+  --color-cursor: #f472b6;
+  
+  /* Success & Danger */
+  --color-success-bg: #f0fdf4;
+  --color-success-text: #15803d;
+  --color-success-border: #bbf7d0;
+  
+  --color-danger-bg: #fef2f2;
+  --color-danger-text: #b91c1c;
+  --color-danger-border: #fca5a5;
+  
+  --backdrop-blur-card: none;
+  --skill-glow: 0 0 16px 4px rgba(128, 90, 213, 0.4), 0 2px 8px rgba(0,0,0,0.06);
+  --skill-border-hover: #a78bfa;
+  --skill-card-radial: rgba(244, 114, 182, 0.4);
+}
+
+[data-theme='agent'] {
+  --color-bg-primary: #060B16;
+  --color-bg-secondary: #0D1425;
+  --color-card-bg: rgba(17, 28, 49, 0.7);
+  --color-card-border: rgba(110, 170, 255, 0.12);
+  --color-card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 0 12px rgba(77, 163, 255, 0.04);
+  --color-card-hover-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 0 20px rgba(77, 163, 255, 0.08);
+  
+  --color-text-primary: #F7FAFF;
+  --color-text-secondary: #B7C7E3;
+  --color-text-muted: #7E8CA7;
+  
+  --color-accent-pink: #4DA3FF;
+  --color-accent-pink-hover: #75C6FF;
+  --color-accent-pink-bg: rgba(77, 163, 255, 0.1);
+  
+  --color-btn-gradient-start: #4DA3FF;
+  --color-btn-gradient-end: #75C6FF;
+  --color-btn-gradient-start-hover: #75C6FF;
+  --color-btn-gradient-end-hover: #9AD8FF;
+  
+  --color-border-input: rgba(110, 170, 255, 0.12);
+  --color-border-input-focus: #4DA3FF;
+  
+  /* Sidebar */
+  --color-sidebar-bg: #0D1425;
+  --color-sidebar-border: rgba(110, 170, 255, 0.12);
+  --color-sidebar-hover-bg: rgba(77, 163, 255, 0.08);
+  --color-sidebar-hover-text: #4DA3FF;
+  
+  /* Book Cover */
+  --color-book-cover-gradient-start: #0D1425;
+  --color-book-cover-gradient-mid: #111C31;
+  --color-book-cover-gradient-end: #16233D;
+  
+  /* Heatmap */
+  --color-github-0: rgba(110, 170, 255, 0.06);
+  --color-github-1: rgba(77, 163, 255, 0.2);
+  --color-github-2: rgba(77, 163, 255, 0.45);
+  --color-github-3: #4DA3FF;
+  --color-github-4: #9AD8FF;
+  
+  --color-leetcode-0: rgba(110, 170, 255, 0.06);
+  --color-leetcode-1: rgba(82, 227, 194, 0.2);
+  --color-leetcode-2: rgba(82, 227, 194, 0.45);
+  --color-leetcode-3: #52E3C2;
+  --color-leetcode-4: #ffffff;
+  
+  /* Cursor */
+  --color-cursor: #4DA3FF;
+  
+  /* Success & Danger */
+  --color-success-bg: rgba(82, 227, 194, 0.08);
+  --color-success-text: #52E3C2;
+  --color-success-border: rgba(82, 227, 194, 0.15);
+  
+  --color-danger-bg: rgba(255, 107, 145, 0.08);
+  --color-danger-text: #FF6B91;
+  --color-danger-border: rgba(255, 107, 145, 0.15);
+  
+  --backdrop-blur-card: blur(12px);
+  --skill-glow: 0 0 16px 4px rgba(77, 163, 255, 0.25), 0 2px 8px rgba(0, 0, 0, 0.2);
+  --skill-border-hover: #4DA3FF;
+  --skill-card-radial: rgba(77, 163, 255, 0.25);
+}
+
 @layer base {
   body {
     font-family: 'Inter', system-ui, sans-serif;
@@ -52,5 +184,26 @@
       height: 18px !important;
     }
   }
-}
 
+  /* Heatmap custom colored cells */
+  .bg-github-0 { background-color: var(--color-github-0) !important; }
+  .bg-github-1 { background-color: var(--color-github-1) !important; }
+  .bg-github-2 { background-color: var(--color-github-2) !important; }
+  .bg-github-3 { background-color: var(--color-github-3) !important; }
+  .bg-github-4 { background-color: var(--color-github-4) !important; }
+
+  .bg-leetcode-0 { background-color: var(--color-leetcode-0) !important; }
+  .bg-leetcode-1 { background-color: var(--color-leetcode-1) !important; }
+  .bg-leetcode-2 { background-color: var(--color-leetcode-2) !important; }
+  .bg-leetcode-3 { background-color: var(--color-leetcode-3) !important; }
+  .bg-leetcode-4 { background-color: var(--color-leetcode-4) !important; }
+
+  /* Theme Success & Danger alert custom utilities */
+  .bg-theme-success { background-color: var(--color-success-bg) !important; }
+  .text-theme-success { color: var(--color-success-text) !important; }
+  .border-theme-success { border-color: var(--color-success-border) !important; }
+
+  .bg-theme-danger { background-color: var(--color-danger-bg) !important; }
+  .text-theme-danger { color: var(--color-danger-text) !important; }
+  .border-theme-danger { border-color: var(--color-danger-border) !important; }
+}

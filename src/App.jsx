@@ -35,7 +35,7 @@ function App() {
     localStorage.setItem('portfolio-theme', nextTheme);
     setTimeout(() => {
       document.documentElement.classList.remove('theme-transitioning');
-    }, 350);
+    }, 450);
   };
 
   const handleNavClick = () => {

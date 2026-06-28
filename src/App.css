@@ -22,6 +22,8 @@ html,body {
   padding: 0;
   box-sizing: border-box;
   background: var(--color-bg-primary) !important;
+  position: relative;
+  transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #root {
@@ -32,25 +34,40 @@ html,body {
   align-items: stretch;
   justify-content: stretch;
   background: var(--color-bg-primary) !important;
+  transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Agent Mode Background Glows */
+/* Agent Mode Background Glows using pseudo-element for smooth fade transition */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 90% 10%, rgba(77, 163, 255, 0.05) 0%, transparent 45%),
+              radial-gradient(circle at 10% 90%, rgba(77, 163, 255, 0.03) 0%, transparent 45%);
+  opacity: 0;
+  transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+[data-theme='agent'] body::before {
+  opacity: 1;
+}
+
 [data-theme='agent'] body,
 [data-theme='agent'] #root {
-  background: radial-gradient(circle at 90% 10%, rgba(77, 163, 255, 0.05) 0%, transparent 45%),
-              radial-gradient(circle at 10% 90%, rgba(77, 163, 255, 0.03) 0%, transparent 45%),
-              #060B16 !important;
+  background: var(--color-bg-primary) !important;
 }
 
 /* Smooth theme transitions */
 .theme-transitioning,
 .theme-transitioning * {
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), 
-              border-color 300ms cubic-bezier(0.4, 0, 0.2, 1), 
-              color 300ms cubic-bezier(0.4, 0, 0.2, 1), 
-              box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), 
-              stroke 300ms cubic-bezier(0.4, 0, 0.2, 1), 
-              fill 300ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 400ms cubic-bezier(0.4, 0, 0.2, 1), 
+              color 400ms cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 400ms cubic-bezier(0.4, 0, 0.2, 1), 
+              stroke 400ms cubic-bezier(0.4, 0, 0.2, 1), 
+              fill 400ms cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* Shine sweep animation for premium buttons */

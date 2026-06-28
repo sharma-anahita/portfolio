@@ -47,30 +47,6 @@ export const projects = [
   },
   {
     image: '/api/placeholder/130/100',
-    category: 'Backend',
-    title: 'Video Streaming Backend System',
-    technologies: [
-      'Node.js',
-      'MongoDB',
-      'JWT',
-      'REST APIs',
-      'MVC',
-      'Multer',
-      'Cloudinary'
-    ],
-    github: 'https://github.com/sharma-anahita/video-streaming-backend',
-    live: null,
-    description: 'Developed scalable backend with JWT-secured REST APIs using MVC pattern. Designed Mongoose models for users, subscriptions & video metadata. Integrated Multer + Cloudinary for uploads and media storage. Set up CI/CD-ready architecture for deployment.',
-    highlights: [
-      'JWT-based authentication for users and admins with role separation',
-      'Modular MVC architecture for scalable API development',
-      'Secure video uploads using Multer with Cloudinary storage',
-      'Well-structured MongoDB schemas for users, subscriptions, and videos',
-      'Centralized error handling and reusable API response utilities'
-    ]
-  },
-  {
-    image: '/api/placeholder/130/100',
     category: 'Full-Stack',
     title: 'MindTrack — Mental Health Application',
     technologies: [
@@ -107,6 +83,30 @@ export const projects = [
       'Interactive, responsive dashboard with Recharts and Framer Motion for real-time visualizations',
       'Secure JWT-based authentication with bcrypt password hashing and protected APIs',
       'Monorepo architecture separating frontend, backend, and ML service; production-ready build and start scripts'
+    ]
+  },
+  {
+    image: '/api/placeholder/130/100',
+    category: 'Backend',
+    title: 'Video Streaming Backend System',
+    technologies: [
+      'Node.js',
+      'MongoDB',
+      'JWT',
+      'REST APIs',
+      'MVC',
+      'Multer',
+      'Cloudinary'
+    ],
+    github: 'https://github.com/sharma-anahita/video-streaming-backend',
+    live: null,
+    description: 'Developed scalable backend with JWT-secured REST APIs using MVC pattern. Designed Mongoose models for users, subscriptions & video metadata. Integrated Multer + Cloudinary for uploads and media storage. Set up CI/CD-ready architecture for deployment.',
+    highlights: [
+      'JWT-based authentication for users and admins with role separation',
+      'Modular MVC architecture for scalable API development',
+      'Secure video uploads using Multer with Cloudinary storage',
+      'Well-structured MongoDB schemas for users, subscriptions, and videos',
+      'Centralized error handling and reusable API response utilities'
     ]
   },
   {

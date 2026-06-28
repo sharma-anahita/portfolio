@@ -10,7 +10,7 @@ const Experience = () => {
             <div className="mb-2 sm:mb-0">
               <h3 className="text-lg sm:text-xl font-bold text-themeText">Research Intern – DRDO, Delhi (Office of Cyber)</h3>
             </div>
-            <span className="text-sm text-themeTextMuted self-start sm:self-auto">Dec 2025 – Present</span>
+            <span className="text-sm text-themeTextMuted self-start sm:self-auto">Dec 2025 – Feb 2026</span>
           </div>
           <div className="space-y-2">
             <p className="text-sm text-themeTextSec">
